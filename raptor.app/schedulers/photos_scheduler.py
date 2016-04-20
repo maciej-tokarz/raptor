@@ -18,7 +18,7 @@ class PhotosScheduler:
         def make_photo():
             if not self.alarm.alarm_started:
                 print('PhotosScheduler: robię zdjęcie wg. harmonogramu.')
-                photo_date = strftime('%Y-%m-%d %H:%M', gmtime())
+                photo_date = strftime('%Y-%m-%d %H:%M', time.localtime())
                 self.camera.warm_camera()
                 self.camera.make_photo('/home/pi/raptor.app/', 'photo')
                 print('PhotosScheduler: wysyłam zdjęcie wg. harmonogramu.')
