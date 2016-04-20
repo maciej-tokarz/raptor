@@ -1,4 +1,4 @@
-﻿![Raptor](/Docs/icon.png) 
+﻿![Raptor](/Docs/icon.png)
 ## Raptor
 
 Maciej Tokarz © My-Poi!

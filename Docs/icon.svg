@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="256"
-   width="256"
-   viewBox="0 0 256 256"
+   height="72"
+   width="72"
+   viewBox="0 0 72 72"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="D:\Projekty\Raptor\Docs\icon.png"
+   inkscape:export-filename="D:\Projekty\Raptor.Public\Docs\icon.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <metadata
@@ -25,6 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,23 +44,23 @@
      inkscape:window-height="1017"
      id="namedview9"
      showgrid="false"
-     inkscape:zoom="0.65186406"
-     inkscape:cx="269.12704"
-     inkscape:cy="-8.4084828"
+     inkscape:zoom="5.2149125"
+     inkscape:cx="28.286714"
+     inkscape:cy="-4.0483265"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <circle
      style="fill:#fea500"
-     r="128"
      id="ellipse6"
-     cx="128"
-     cy="128" />
+     cx="36"
+     cy="36"
+     r="36" />
   <path
      sodipodi:nodetypes="ccccccc"
      style="fill:#ffffff"
      inkscape:connector-curvature="0"
-     d="m 129.8704,51.19919 c 0,0 26.17976,25.246958 72.46432,25.246958 0,0 4.6735,50.489052 -10.7532,79.007722 -10.75321,19.63607 -32.25948,49.01692 -63.58153,58.36389 C 97.141997,204.00216 75.171673,174.15238 64.418467,154.52118 48.991831,126.00222 53.665262,76.446148 53.665262,76.446148 99.94982,76.446148 129.8704,51.19919 129.8704,51.19919 Z"
+     d="m 36.52605,14.399772 c 0,0 7.363058,7.100707 20.38059,7.100707 0,0 1.314422,14.200046 -3.024337,22.220922 C 50.857962,49.244045 44.809324,57.50741 35.999997,60.136245 27.321187,57.375608 21.142033,48.980357 18.117694,43.459081 13.778952,35.438124 15.093355,21.500479 15.093355,21.500479 c 13.017532,0 21.432695,-7.100707 21.432695,-7.100707 z"
      id="path1" />
 </svg>
