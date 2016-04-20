@@ -1,7 +1,32 @@
 ﻿![Raptor](/Docs/icon.png)
-## Raptor
+#Raptor
 
-Maciej Tokarz © My-Poi!
+###Udostępniony kod wykorzystujesz na własną odpowiedzialność!
+
+##Uwagi
+
+Projekt jest jaki jest! Jest to moje pierwsze doświadczenie z pisaniem skryptów w Pythonie więc można się czepiać :-)
+
+Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
+
+##Założenia
+
+Opracowanie na bazie komputerka Raspberry systemu dozorowania określonego miejsca wraz z zapisem obrazu z kamery i powiadomieniami via sms i e-mail:
+
+- na starcie ustawia czas na podstawie wzorca wg. pool.ntp.org 
+- dozoruje obszar czujką i śledzi jej wskazania 
+- po otrzymaniu określonej ilości wskazań pozytywnych czujki aktywuje alarm 
+- rozpoczęcie alarmu sygnalizowane jest sms o przykładowej treści “Raptor: alarm 2016-04-14 1123” gdzie data i godzina to początek alarmu 
+- alarm realizuje przede wszystkim swoją podstawową funkcję, to znaczy zapisuje serię 90 zdjęć w odstępach sekundowych 
+- wykonanie w trakcie trwania powyższej serii zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jak nie ma ruchu 
+- po zakończeniu serii pierwsze sześć zdjęć wysyłane jest e-mailem do określonych odbiorców 
+- po wysłaniu e-maila alarm jest ponownie gotowy do działania i kolejne informacje z czujki mogą wywołać następny alarm 
+- przed zapisem zdjęć alarmu sprawdzana jest ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB najstarszych 10 alarmów zostanie automatycznie usuniętych
+- codziennie o ustalonej godzinie Raptor wysyła zdjęcie kontrolne e-mailem.
+
+##UPS
+
+Niebawem...
 
 ##Instalacja Raspbiana Jessie
 
@@ -93,3 +118,6 @@ $ df -Bm
 ##Uruchomienie skryptu Pythona
 
 $ sudo python /home/pi/raptor.app/raptor.app.py
+
+___
+Maciej Tokarz © My-Poi!
