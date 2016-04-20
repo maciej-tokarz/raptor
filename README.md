@@ -3,11 +3,13 @@
 
 ###Udostępniony kod wykorzystujesz na własną odpowiedzialność!
 
-##Uwagi
+##Wstęp
 
 Projekt jest jaki jest! Jest to moje pierwsze doświadczenie z pisaniem skryptów w Pythonie więc można się czepiać :-)
 
 Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
+
+[Dyskusja na grupie Malinowe Pi (Facebook) o projekcie](https://www.facebook.com/groups/malinowepi/permalink/433256330178355/) <<< Serdeczne dzięki za uwagi!
 
 ##Założenia
 
@@ -26,7 +28,15 @@ Opracowanie na bazie komputerka Raspberry systemu dozorowania określonego miejs
 
 ##UPS
 
-Niebawem...
+Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) będę również składał mini UPS do Raspberry. Piotr udostępnił [schemat](/Docs/UPS_mini.png) do którego potrzebne są następujące podzespoły:
+
+- 2 lub 3 ogniwa 18650 wraz z koszykiem
+- zasilacz sieciowy 5V minimum 3A 
+- ładowarka ogniw 18650 np. TP4056
+- przetwornica STEP-UP np. SX1308 
+- dwie diody np. 1N5822
+
+Piotr - serdeczne dzięki!
 
 ##Instalacja Raspbiana Jessie
 
