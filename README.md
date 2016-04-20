@@ -38,6 +38,15 @@ Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/view
 
 Piotr - serdeczne dzięki!
 
+##TODO
+
+Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
+
+- zebranie ustawień w jednym miejscu (smtp, numery telefonów i adresy e-mail odbiorców)
+- interfejs graficzny do zmiany powyższych ustawień oraz przeglądania zdjęć alarmów
+- sterowanie alarmem komendami sms
+- niebawem listę uzupełnię o informacje zebrane w dyskusji na grupie Malinowe Pi na Facebook-u
+
 ##Instalacja Raspbiana Jessie
 
 Jako podstawę działania posłuży wersja:
@@ -47,7 +56,7 @@ Jako podstawę działania posłuży wersja:
 Po zainstalowaniu należy:
 
 - zmienić hasło administratora,
-- rozszerzyć partycję na całą objętość karty,
+- rozszerzyć partycję na całą objętość kar`ty,
 - włączyć kamerę,
 - włączyć obsługę GPIO
 - włączyć obsługę Serial
