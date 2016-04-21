@@ -38,7 +38,7 @@ Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/view
 
 Piotr - serdeczne dzięki!
 
-##TODO
+##Do zrobienia
 
 Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
 
