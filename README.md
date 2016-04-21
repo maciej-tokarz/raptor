@@ -13,7 +13,7 @@ Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https:
 
 ##Założenia
 
-Opracowanie na bazie komputerka Raspberry systemu dozorowania określonego miejsca wraz z zapisem obrazu z kamery i powiadomieniami via sms i e-mail:
+Opracowanie na bazie komputerka Raspberry systemu dozorowania określonego miejsca wraz z zapisem obrazu z kamery oraz powiadomieniami via sms i e-mail:
 
 - na starcie ustawia czas na podstawie wzorca wg. pool.ntp.org 
 - dozoruje obszar czujką i śledzi jej wskazania 
