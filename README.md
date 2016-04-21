@@ -81,10 +81,6 @@ $ sudo apt-get install python-picamera
 
 $ sudo apt-get upgrade
 
-##Usunięcie plików alarmu
-
-$ sudo rm -rf /home/pi/alarms
-
 ##Instalacja modemu GSM
 
 $ sudo apt-get install ppp usb-modeswitch
@@ -133,6 +129,10 @@ $ sudo dpkg --configure -a
 ##Sprawdzenie wolnej przestrzeni systemu plików
 
 $ df -Bm
+
+##Usunięcie plików alarmu
+
+$ sudo rm -rf /home/pi/alarms
 
 ##Uruchomienie skryptu Pythona
 
