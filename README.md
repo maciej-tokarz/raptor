@@ -5,26 +5,38 @@
 
 ##Wstęp
 
-Projekt jest jaki jest! Jest to moje pierwsze doświadczenie z pisaniem skryptów w Pythonie więc można się czepiać :-)
+Projekt jest moim pierwszym napisanym w Pythonie więc proszę o wyrozumiałość :-)
 
-Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
+Raptor to aplikacja, dzięki której możliwe jest dozorowanie wybranego miejsca. Za pomocą czujki PIR identyfikowane jest naruszenie obszaru przez intruza. W takim przypadku wzbudzany jest alarm, który powiadamia nas sms o zdarzeniu oraz przez określony czas rejestruje co sekundę zdjęcia z kamery. Na zakończenie alarmu pierwszych sześć zdjęć jest wysyłanych do nas e-mailem. Całość działa w oparciu o komputer Raspberry Pi.
+
+Zainteresowanych zapraszam do współtworzenia Raptora.
 
 [Dyskusja na grupie Malinowe Pi (Facebook) o projekcie](https://www.facebook.com/groups/malinowepi/permalink/433256330178355/) <<< Serdeczne dzięki za uwagi!
 
-##Założenia
+##Podstawowe funkcje programu
 
-Opracowanie na bazie komputerka Raspberry systemu dozorowania określonego miejsca wraz z zapisem obrazu z kamery oraz powiadomieniami via sms i e-mail:
+- Raptor na starcie ustawia czas systemowy na podstawie wzorca wg. pool.ntp.org,
+- dozoruje obszar czujką i śledzi jej wskazania,
+- po otrzymaniu określonej ilości wskazań pozytywnych czujki, aktywuje alarm,
+- rozpoczęcie alarmu sygnalizowane jest sms o przykładowej treści “Raptor: alarm 2016-04-14 1123” gdzie data i godzina to początek alarmu,
+- alarm realizuje przede wszystkim swoją podstawową funkcję, to znaczy zapisuje serię 90 zdjęć w odstępach sekundowych,
+- wykonanie zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jak nie ma ruchu w chronionym obszarze,
+- po zakończeniu serii pierwsze sześć zdjęć wysyłane jest e-mailem do określonych odbiorców,
+- po wysłaniu e-maila alarm jest ponownie gotowy do działania i kolejne informacje z czujki mogą wywołać następny alarm,
+- przed zapisem zdjęć alarmu sprawdzana jest ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB to 10 najstarszych alarmów zostanie automatycznie usuniętych,
+- codziennie o ustalonej godzinie Raptor wysyła zdjęcie kontrolne e-mailem,
 
-- na starcie ustawia czas na podstawie wzorca wg. pool.ntp.org 
-- dozoruje obszar czujką i śledzi jej wskazania 
-- po otrzymaniu określonej ilości wskazań pozytywnych czujki aktywuje alarm 
-- rozpoczęcie alarmu sygnalizowane jest sms o przykładowej treści “Raptor: alarm 2016-04-14 1123” gdzie data i godzina to początek alarmu 
-- alarm realizuje przede wszystkim swoją podstawową funkcję, to znaczy zapisuje serię 90 zdjęć w odstępach sekundowych 
-- wykonanie w trakcie trwania powyższej serii zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jak nie ma ruchu 
-- po zakończeniu serii pierwsze sześć zdjęć wysyłane jest e-mailem do określonych odbiorców 
-- po wysłaniu e-maila alarm jest ponownie gotowy do działania i kolejne informacje z czujki mogą wywołać następny alarm 
-- przed zapisem zdjęć alarmu sprawdzana jest ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB najstarszych 10 alarmów zostanie automatycznie usuniętych
-- codziennie o ustalonej godzinie Raptor wysyła zdjęcie kontrolne e-mailem.
+Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
+
+##Podzespoły
+
+- Raspberry Pi 2 lub nowszy,
+- dedykowana kamera wraz podświetleniem IR,
+- taśma łącząca kamerę, np. o długości dwóch metrów,
+- czujka PIR,
+- HUB USB niezbędny do zasilenia modemu GSM,
+- modem GSM np. Huawei E3131h-2,
+- UPS opisany poniżej,
 
 ##UPS
 
@@ -56,7 +68,7 @@ Jako podstawę działania posłuży wersja:
 Po zainstalowaniu należy:
 
 - zmienić hasło administratora,
-- rozszerzyć partycję na całą objętość kar`ty,
+- rozszerzyć partycję na całą objętość karty,
 - włączyć kamerę,
 - włączyć obsługę GPIO
 - włączyć obsługę Serial
