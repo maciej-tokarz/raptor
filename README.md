@@ -32,7 +32,7 @@ Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https:
 
 ##Podzespoły
 
-- Raspberry Pi 2 lub nowszy,
+- Raspberry Pi,
 - dedykowana kamera wraz podświetleniem IR,
 - taśma łącząca kamerę, np. o długości dwóch metrów,
 - czujka PIR,
