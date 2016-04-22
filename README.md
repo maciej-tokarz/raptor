@@ -59,6 +59,7 @@ Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
 - zebranie ustawień w jednym miejscu (smtp, numery telefonów i adresy e-mail odbiorców)
 - interfejs graficzny do zmiany powyższych ustawień oraz przeglądania zdjęć alarmów
 - sterowanie programem komendami sms
+- dodanie - po sms-ie informacyjnym o alarmie - połączenia z telefonem odbiorcy
 - listę uzupełnię o informacje zebrane w [dyskusji na grupie Malinowe Pi na Facebook-u](https://www.facebook.com/groups/malinowepi/permalink/433256330178355/)
 
 ##Instalacja Raspbiana Jessie
