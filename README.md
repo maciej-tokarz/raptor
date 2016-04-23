@@ -24,8 +24,8 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 - alarm realizuje przede wszystkim swoją podstawową funkcję, to znaczy zapisuje serię 90 zdjęć w odstępach sekundowych,
 - wykonanie zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jeśli nie ma ruchu w chronionym obszarze,
 - po zakończeniu serii, pierwszych sześć zdjęć zostanie wysłane e-mailem do określonych odbiorców,
-- po wysłaniu e-maila alarm będzie ponownie gotowy do działania i wskazania czujki mogą wywołać następny alarm,
-- przed zapisem zdjęć Raptor sprawdza ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB to 10 najstarszych alarmów zostanie automatycznie usuniętych,
+- po wysłaniu e-maila Raptor będzie ponownie gotowy do działania i wskazania czujki mogą wywołać następny alarm,
+- przed zapisem zdjęć program sprawdza ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB to 10 najstarszych alarmów zostanie automatycznie usuniętych,
 - codziennie o ustalonej godzinie Raptor wysyła kontrolne zdjęcie e-mailem,
 
 Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
