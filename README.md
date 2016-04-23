@@ -19,14 +19,14 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 
 - Raptor na starcie ustawia czas systemowy na podstawie wzorca wg. pool.ntp.org,
 - dozoruje obszar czujką i śledzi jej wskazania,
-- po otrzymaniu określonej ilości wskazań pozytywnych czujki, aktywuje alarm,
-- rozpoczęcie alarmu sygnalizowane jest sms o przykładowej treści “Raptor: alarm 2016-04-14 1123” gdzie data i godzina to początek alarmu,
+- po otrzymaniu określonej ilości wskazań pozytywnych czujki aktywuje alarm,
+- rozpoczęcie alarmu sygnalizowane jest sms-em o przykładowej treści “Raptor: alarm 2016-04-14 1123”, gdzie data i godzina to początek alarmu,
 - alarm realizuje przede wszystkim swoją podstawową funkcję, to znaczy zapisuje serię 90 zdjęć w odstępach sekundowych,
-- wykonanie zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jak nie ma ruchu w chronionym obszarze,
-- po zakończeniu serii pierwsze sześć zdjęć wysyłane jest e-mailem do określonych odbiorców,
-- po wysłaniu e-maila alarm jest ponownie gotowy do działania i kolejne informacje z czujki mogą wywołać następny alarm,
-- przed zapisem zdjęć alarmu sprawdzana jest ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB to 10 najstarszych alarmów zostanie automatycznie usuniętych,
-- codziennie o ustalonej godzinie Raptor wysyła zdjęcie kontrolne e-mailem,
+- wykonanie zdjęcia determinuje wskazanie czujki – zdjęcie nie zostanie wykonane jeśli nie ma ruchu w chronionym obszarze,
+- po zakończeniu serii, pierwszych sześć zdjęć zostanie wysłane e-mailem do określonych odbiorców,
+- po wysłaniu e-maila alarm będzie ponownie gotowy do działania i wskazania czujki mogą wywołać następny alarm,
+- przed zapisem zdjęć Raptor sprawdza ilość dostępnego miejsca na karcie i jeśli będzie go mniej niż 500MB to 10 najstarszych alarmów zostanie automatycznie usuniętych,
+- codziennie o ustalonej godzinie Raptor wysyła kontrolne zdjęcie e-mailem,
 
 Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
 
