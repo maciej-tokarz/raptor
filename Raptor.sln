@@ -17,6 +17,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "raptor.ups", "raptor.ups", "{D0B13D73-EC5A-4847-BAEF-0E1F354957AF}"
+	ProjectSection(SolutionItems) = preProject
+		raptor.ups\raptor-cache.lib = raptor.ups\raptor-cache.lib
+		raptor.ups\raptor.bak = raptor.ups\raptor.bak
+		raptor.ups\raptor.dcm = raptor.ups\raptor.dcm
+		raptor.ups\raptor.kicad_pcb = raptor.ups\raptor.kicad_pcb
+		raptor.ups\raptor.lib = raptor.ups\raptor.lib
+		raptor.ups\raptor.pro = raptor.ups\raptor.pro
+		raptor.ups\raptor.sch = raptor.ups\raptor.sch
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9C4CD966-6E55-418F-8568-BC7A1ACFED85}"
+	ProjectSection(SolutionItems) = preProject
+		raptor.ups\docs\GPV-20-spec-PL-R4.pdf = raptor.ups\docs\GPV-20-spec-PL-R4.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +44,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C4CD966-6E55-418F-8568-BC7A1ACFED85} = {D0B13D73-EC5A-4847-BAEF-0E1F354957AF}
 	EndGlobalSection
 EndGlobal
