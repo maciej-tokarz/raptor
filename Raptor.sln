@@ -19,11 +19,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "raptor.ups", "raptor.ups", "{D0B13D73-EC5A-4847-BAEF-0E1F354957AF}"
 	ProjectSection(SolutionItems) = preProject
+		raptor.ups\_saved_raptor.sch = raptor.ups\_saved_raptor.sch
 		raptor.ups\raptor-cache.lib = raptor.ups\raptor-cache.lib
 		raptor.ups\raptor.bak = raptor.ups\raptor.bak
+		raptor.ups\raptor.bck = raptor.ups\raptor.bck
 		raptor.ups\raptor.dcm = raptor.ups\raptor.dcm
 		raptor.ups\raptor.kicad_pcb = raptor.ups\raptor.kicad_pcb
 		raptor.ups\raptor.lib = raptor.ups\raptor.lib
+		raptor.ups\raptor.net = raptor.ups\raptor.net
 		raptor.ups\raptor.pro = raptor.ups\raptor.pro
 		raptor.ups\raptor.sch = raptor.ups\raptor.sch
 	EndProjectSection
