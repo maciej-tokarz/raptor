@@ -212,12 +212,12 @@ $EndComp
 $Comp
 L CONN_01X02 P2
 U 1 1 573A2AD6
-P 10300 2650
-F 0 "P2" H 10300 2800 50  0000 C CNN
-F 1 "CONN_RPI" V 10400 2650 50  0000 C CNN
-F 2 "my-poi:TerminalBlock_2pin_5mm" H 10300 2650 50  0001 C CNN
-F 3 "" H 10300 2650 50  0000 C CNN
-	1    10300 2650
+P 10300 2550
+F 0 "P2" H 10300 2700 50  0000 C CNN
+F 1 "CONN_RPI" V 10400 2550 50  0000 C CNN
+F 2 "my-poi:TerminalBlock_2pin_5mm" H 10300 2550 50  0001 C CNN
+F 3 "" H 10300 2550 50  0000 C CNN
+	1    10300 2550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -351,10 +351,6 @@ Wire Wire Line
 	2000 3000 2050 3000
 Connection ~ 2050 3000
 Wire Wire Line
-	9950 3600 9950 2700
-Wire Wire Line
-	9950 2700 10100 2700
-Wire Wire Line
 	10100 3200 9950 3200
 Connection ~ 9950 3200
 Wire Wire Line
@@ -362,4 +358,8 @@ Wire Wire Line
 Wire Wire Line
 	9800 3100 9800 2600
 Connection ~ 9800 2600
+Wire Wire Line
+	9950 3600 9950 2500
+Wire Wire Line
+	9950 2500 10100 2500
 $EndSCHEMATC

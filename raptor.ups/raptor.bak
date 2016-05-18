@@ -215,7 +215,7 @@ U 1 1 573A2AD6
 P 10300 2650
 F 0 "P2" H 10300 2800 50  0000 C CNN
 F 1 "CONN_RPI" V 10400 2650 50  0000 C CNN
-F 2 "Terminal_Blocks:TerminalBlock_Pheonix_PT-3.5mm_2pol" H 10300 2650 50  0001 C CNN
+F 2 "my-poi:TerminalBlock_2pin_5mm" H 10300 2650 50  0001 C CNN
 F 3 "" H 10300 2650 50  0000 C CNN
 	1    10300 2650
 	1    0    0    -1  
@@ -226,7 +226,7 @@ U 1 1 573A2ACA
 P 1600 2850
 F 0 "P1" H 1600 3000 50  0000 C CNN
 F 1 "CONN_220V" V 1700 2850 50  0000 C CNN
-F 2 "Terminal_Blocks:TerminalBlock_Pheonix_PT-3.5mm_2pol" H 1600 2850 50  0001 C CNN
+F 2 "my-poi:TerminalBlock_2pin_5mm" H 1600 2850 50  0001 C CNN
 F 3 "" H 1600 2850 50  0000 C CNN
 	1    1600 2850
 	-1   0    0    1   
@@ -270,7 +270,7 @@ U 1 1 573CBE19
 P 10300 3150
 F 0 "P3" H 10300 3300 50  0000 C CNN
 F 1 "CONN_HUB" V 10400 3150 50  0000 C CNN
-F 2 "Terminal_Blocks:TerminalBlock_Pheonix_PT-3.5mm_2pol" H 10300 3150 50  0001 C CNN
+F 2 "my-poi:TerminalBlock_2pin_5mm" H 10300 3150 50  0001 C CNN
 F 3 "" H 10300 3150 50  0000 C CNN
 	1    10300 3150
 	1    0    0    -1  
