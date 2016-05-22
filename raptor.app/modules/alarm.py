@@ -105,5 +105,5 @@ class Alarm:
         self.email.send_photos(
             ['foo@outlook.com', 'foo2@gmail.com'],
             'Raptor: pierwsze szesc zdjec z alarmu ' + self.alarm_name, 
-            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych ' + alarm_photos_len + ') z alarmu ' + self.alarm_name, 
+            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych ' + str(alarm_photos_len) + ') z alarmu ' + self.alarm_name, 
             photos_to_send)
