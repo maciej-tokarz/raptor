@@ -33,16 +33,38 @@ class EmailMessage:
     def send_email(self, recipients, message):
         self.modem.check_modem()
         try:
-            server = None
-            server = smtplib.SMTP()
-            server.connect('smtp.live.com', 587)
-            server.ehlo()
-            server.starttls()
-            server.login('foo@outlook.com', '123123')
+            server = self.server_connect()
+            if not self.server_is_connected(server): self.server_connect(server)
             server.sendmail('foo@outlook.com', recipients, message)
             print('Wysłałem e-maila')
         except socket.error as ex:
-            print('Nie można się połączyć z serwerem poczty: %s' % ex)
+            print('(socket.error) Nie można się połączyć z serwerem poczty:\n' + str(ex))
+            pass
+        except Exception as ex:
+            print('Nie można się połączyć z serwerem poczty:\n' + str(ex))
+            pass
         finally:
-            if server != None:
-                server.quit()
+            self.server_disconnect(server)
+            server = None
+
+    def server_connect(self):
+        server = smtplib.SMTP()
+        server.connect('smtp-mail.outlook.com', 587)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login('foo@outlook.com', '123123')
+        time.sleep(3)
+        return server
+
+    def server_is_connected(self, server):
+        try:
+            status = server.noop()[0]
+        except:  # smtplib.SMTPServerDisconnected
+            status = -1
+        return True if status == 250 else False
+
+    def server_disconnect(self, server):
+        if self.server_is_connected(server): 
+            server.quit()
+            print('Zamknąłem połączenie z serwerem SMTP')
