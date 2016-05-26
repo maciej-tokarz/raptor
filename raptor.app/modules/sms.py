@@ -8,7 +8,7 @@ class Sms:
 
     def send(self, recipient, message):
         body = 'from=SMSAPI!&to=48' + recipient + '&raport=1&message=' + message
-        my_message = '''From: Foo <foo@outlook.com>
+        my_message = '''From: Foo <foo@gmail.com>
 To: Sms Api <sms.do@smsapi.pl>
 Subject: login@8456fkty567gb3bg37b357b3457b3457
 
