@@ -58,9 +58,7 @@ class Alarm:
         self.send_six_alarm_photos()
 
         # Zdejmij flagi alarmu!
-        print('Alarm: zdejmuję flagi alarmu.')
-        self.pir.is_alarm = False
-        self.alarm_started = False
+        self.remove_alarm_flag()
 
     def set_alarm_properties(self):
         self.alarm_name = strftime('%Y-%m-%d %H%M', time.localtime())
@@ -107,3 +105,8 @@ class Alarm:
             'Raptor: pierwsze szesc zdjec z alarmu ' + self.alarm_name, 
             'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych ' + str(alarm_photos_len) + ') z alarmu ' + self.alarm_name, 
             photos_to_send)
+
+    def remove_alarm_flag(self):
+        print('Alarm: zdejmuję flagi alarmu.')
+        self.pir.is_alarm = False
+        self.alarm_started = False

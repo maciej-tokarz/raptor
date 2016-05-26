@@ -159,5 +159,11 @@ $ sudo rm -rf /home/pi/alarms
 
 $ sudo python /home/pi/raptor.app/raptor.app.py
 
+##Wyłączenie diody kamery
+
+$ sudo nano /boot/config.txt
+
+disable_camera_led=1
+
 ___
 Maciej Tokarz © My-Poi!

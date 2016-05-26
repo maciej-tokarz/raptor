@@ -46,7 +46,7 @@ class EmailMessage:
             print('Nie można się połączyć z serwerem poczty:\n' + str(ex))
             pass
         finally:
-            self.server_disconnect(server)
+            if(server != None): self.server_disconnect(server)
 
     def server_connect(self):
         server = smtplib.SMTP()
