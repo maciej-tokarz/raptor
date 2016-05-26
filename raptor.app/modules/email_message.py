@@ -3,6 +3,8 @@
 
 import os
 import smtplib
+import socket
+import time
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
