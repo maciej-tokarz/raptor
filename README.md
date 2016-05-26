@@ -116,10 +116,16 @@ $ sudo cp /home/pi/ntplib.py /usr/lib/python2.7/ntplib.py
 
 ##Uruchamianie wraz z systemem modemu i Raptora
 
+Dla pewności inicjowanie modemu jest dwukrotne i przedzielone "sleepem".
+
 $ sudo nano /etc/rc.local
 
 ```
 /usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
+sleep 10
+lsusb
+/usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
+sleep 10
 lsusb
 cd /home/pi/raptor.app
 python raptor.app.py

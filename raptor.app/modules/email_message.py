@@ -47,7 +47,6 @@ class EmailMessage:
             pass
         finally:
             self.server_disconnect(server)
-            server = None
 
     def server_connect(self):
         server = smtplib.SMTP()
