@@ -20,7 +20,7 @@ class EmailMessage:
 
         multipart = MIMEMultipart()
         multipart['Subject'] = subject
-        multipart['From'] = 'foo@outlook.com'
+        multipart['From'] = 'foo@gmail.com'
         multipart['To'] = COMMASPACE.join(recipients)
 
         text = MIMEText(message, 'plain')
@@ -37,7 +37,7 @@ class EmailMessage:
         try:
             server = self.server_connect()
             if not self.server_is_connected(server): self.server_connect(server)
-            server.sendmail('foo@outlook.com', recipients, message)
+            server.sendmail('foo@gmail.com', recipients, message)
             print('Wysłałem e-maila')
         except socket.error as ex:
             print('(socket.error) Nie można się połączyć z serwerem poczty:\n' + str(ex))
@@ -50,11 +50,12 @@ class EmailMessage:
 
     def server_connect(self):
         server = smtplib.SMTP()
-        server.connect('smtp-mail.outlook.com', 587)
+        server.set_debuglevel(0)
+        server.connect('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login('foo@outlook.com', '123123')
+        server.login('foo@gmail.com', '123123')
         time.sleep(3)
         return server
 
