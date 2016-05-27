@@ -43,10 +43,6 @@ class Raptor:
 
     try:
 
-        # Uruchom modem.
-        def start_modem():
-            my_modem.connect()
-
         # Ustaw czas systemowy na podstawie wzorca z Internetu.
         def set_os_time():
             my_time = os_time.OsTime()
@@ -73,10 +69,10 @@ class Raptor:
             my_reboot_scheduler = reboot_scheduler.RebootScheduler(my_alarm)
             my_reboot_scheduler.start()
         
-        # Uruchomienie składników Raptora
-        Thread(target = start_modem).start()
+        # Ustawienie czasu
         set_os_time()
 
+        # Uruchomienie składników Raptora
         Thread(target = start_pir).start()
         Thread(target = start_alarm).start()
         

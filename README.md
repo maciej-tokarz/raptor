@@ -116,19 +116,27 @@ $ sudo cp /home/pi/ntplib.py /usr/lib/python2.7/ntplib.py
 
 ##Uruchamianie wraz z systemem modemu i Raptora
 
-Dla pewności inicjowanie modemu jest dwukrotne i przedzielone "sleepem".
-
 $ sudo nano /etc/rc.local
 
 ```
+echo -n "Uruchamiam modem...\n"
+
 /usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
 sleep 10
 lsusb
-/usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
+
+wvdial modem-start >/dev/null 2>&1 || true
 sleep 10
-lsusb
+
+sudo pon.wvdial pin orange
+sleep 10
+
+echo -n "Uruchamiam Raptora!\n"
+
 cd /home/pi/raptor.app
 python raptor.app.py
+
+exit 0
 ```
 
 ##Instalacja Schedule
@@ -165,5 +173,39 @@ $ sudo nano /boot/config.txt
 
 disable_camera_led=1
 
+##Ustawienia modemu GSM
+
+[Poradnik: Instalacja i obsługa modemu 3G](https://dug.net.pl/drukuj/132/huawei_e122___instalacja_i_obsluga_modemu_3g/)
+
+$ sudo nano /etc/wvdial.conf
+
+```
+[Dialer Defaults]
+Modem = /dev/ttyUSB0
+Baud = 460800
+SetVolume = 0
+Dial Command = ATDT
+FlowControl = NOFLOW
+Init1 = ATZ
+
+[Dialer modem-start]
+Init1 = ATZ+CFUN=1
+
+[Dialer pin]
+Init1 = AT+CPIN=1234
+
+[Dialer orange]
+Modem = /dev/ttyUSB0
+Baud = 57600
+Init1 = ATH
+Init2 = ATE1
+Init3 = AT+CGDCONT=1,"IP","internet"
+Dial Command = ATD
+Phone = *99#
+Stupid mode = yes
+Username = "internet"
+Password = "internet"
+Auto DNS = yes
+```
 ___
 Maciej Tokarz © My-Poi!
