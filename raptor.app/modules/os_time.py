@@ -13,6 +13,7 @@ class OsTime:
             response = client.request('pool.ntp.org')
             utc_time = response.tx_time
             os.system("sudo date -s '" + str(time.ctime(utc_time)) + "'")
+            print ('Ustawiłem aktualny czas: ' + str(time.ctime(utc_time)))
         except Exception as ex:
             print(str(ex))
             print ('Nie ustawiłem daty i czasu.')
