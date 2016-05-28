@@ -9,9 +9,11 @@ Nie miałem nigdy styczności z tego typu programami oraz mam mgliste pojęcie o
 Utworzenie schematu sprowadza się do przygotowania symboli dla poszczególnych podzespołów (określenia pinów wejść i wyjść) oraz połączenia wszystkich punktów w całość:
 
 ![schemat](images/ups/001.jpg)
+
 Schemat
 
 ![symbol](images/ups/002.jpg)
+
 Symbol
 
 Trzeba jeszcze wskazać flagi zasilania i wykonać parę dodatkowych operacji np. założyć własną bibliotekę na elementy projektu.
@@ -21,11 +23,13 @@ Aby wykonać płytkę należy opracować (bądź wyszukać w sieci) tzw. footpri
 Po mojemu są to dokładnie zwymiarowane rzeczywiste podzespoły z rozmieszczonymi na planie takiego footprinta miejscami połączeń (nóżkami) czy otworami montażowymi.
 
 ![footprint](images/ups/003.jpg)
+
 Footprint
 
 Mając powyższe opracowane dla wszystkich elementów schematu można przejść do utworzenia płytki.
 
 ![pcb](images/ups/004.jpg)
+
 PCB
 
 Footprinty można przesuwać, pady (miejsca połączeń z podzespołami) łączyć ścieżkami, wyznaczać strefy do automatycznego wypełnienia połączeniami czy też dodawać strefy chroniące przed takim wypełnieniem.
@@ -44,11 +48,17 @@ aby po wytrawieniu otrzymać taki efekt:
 Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (elektroniki, wsporników płytki czy mocowania np. koszyków na ogniwa), lutowanie elementów, podłączanie przewodów zasilających, włącznika itp.
 
 ![pcb 1](images/ups/008.jpg)
+
 ![pcb 1](images/ups/009.jpg)
+
 ![pcb 1](images/ups/010.jpg)
+
 ![pcb 1](images/ups/011.jpg)
+
 ![pcb 1](images/ups/012.jpg)
+
 ![pcb 1](images/ups/013.jpg)
+
 ![pcb 1](images/ups/014.jpg)
 
 Nawet mając mgliste pojęcie o elektronice można wykonać takiego UPS-a. Pewnie wiele mu brakuje do świetności np. zabezpieczenia na wejściu 220 V, powiększonych średnic niektórych padów do 4 mm itp.
