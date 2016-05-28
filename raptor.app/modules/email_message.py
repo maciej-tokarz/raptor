@@ -20,7 +20,7 @@ class EmailMessage:
 
         multipart = MIMEMultipart()
         multipart['Subject'] = subject
-        multipart['From'] = 'foo@gmail.com'
+        multipart['From'] = 'Foo'
         multipart['To'] = COMMASPACE.join(recipients)
 
         text = MIMEText(message, 'plain')
@@ -33,8 +33,12 @@ class EmailMessage:
         self.send_email(recipients, multipart.as_string())
 
     def send_email(self, recipients, message):
+        
+        # Sprawdź modem!
         self.modem.check_modem()
+
         try:
+            server = None
             server = self.server_connect()
             if not self.server_is_connected(server): self.server_connect(server)
             server.sendmail('foo@gmail.com', recipients, message)
@@ -55,7 +59,7 @@ class EmailMessage:
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login('foo@gmail.com', '123123')
+        server.login('foo@gmail.com', '1234')
         time.sleep(3)
         return server
 

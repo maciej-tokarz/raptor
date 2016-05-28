@@ -1,4 +1,4 @@
-﻿![Raptor](/Docs/icon.png)
+﻿![Raptor](/docs/icon.png)
 #Raptor
 
 ###Udostępniony kod wykorzystujesz na własną odpowiedzialność!
@@ -51,6 +51,10 @@ Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/view
 - dwie diody np. 1N5822
 
 Piotr - serdeczne dzięki!
+
+Jak powstawał UPS opisałem [tutaj](ups.md)
+
+UPS Raptora gotowy, opis budowy zamieszczam [tutaj][ups.md]
 
 ##Do zrobienia
 

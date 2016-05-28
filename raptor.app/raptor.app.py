@@ -46,8 +46,11 @@ class Raptor:
         # Ustaw czas systemowy na podstawie wzorca z Internetu.
         def set_os_time():
             my_time = os_time.OsTime()
-            my_time.set()
-            
+            str_time = my_time.set()
+            f = open('/home/pi/raptor.app/log.txt', 'a')
+            f.write('Raptor rozpoczął pracę: ' + str_time + '\r\n')
+            f.close()
+
         # Uruchom moduł kontrolujący wskazania czujki ruchu
         def start_pir():
             my_pir.watch()
@@ -68,7 +71,7 @@ class Raptor:
         def start_reboot_scheduler():
             my_reboot_scheduler = reboot_scheduler.RebootScheduler(my_alarm)
             my_reboot_scheduler.start()
-        
+
         # Ustawienie czasu
         set_os_time()
 
@@ -86,7 +89,13 @@ class Raptor:
     except KeyboardInterrupt:
         my_pir.gpio_cleanup
 
-    except Exception as ex: 
+    except Exception as ex:
         print(str(ex))
         print('Raptor: restartuję system z powodu błędu!')
+        f = open('/home/pi/raptor.app/log.txt', 'a')
+        f.write('\r\n')
+        f.write('Raptor: restartuję system z powodu błędu!' + '\r\n')
+        f.write(str(ex) + '\r\n')
+        f.write('\r\n')
+        f.close()
         os.system("shutdown -r now")
