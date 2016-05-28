@@ -42,7 +42,7 @@ Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https:
 
 ##UPS
 
-Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) będę również składał mini UPS do Raspberry. Piotr udostępnił [schemat](/Docs/UPS_mini.png) do którego potrzebne są następujące podzespoły:
+Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) będę również składał mini UPS do Raspberry. Piotr udostępnił [schemat](/docs/UPS_mini.png) do którego potrzebne są następujące podzespoły:
 
 - 2 lub 3 ogniwa 18650 wraz z koszykiem
 - zasilacz sieciowy 5V minimum 3A 
