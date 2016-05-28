@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "raptor.app", "raptor.app\raptor.app.pyproj", "{99F0389E-9119-42C8-ABC3-0504354EE598}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docss", "docss", "{7F6F7305-A5DB-490D-A1D9-FD3A61952D91}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{7F6F7305-A5DB-490D-A1D9-FD3A61952D91}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\icon.metrop = Docs\icon.metrop
 		Docs\icon.png = Docs\icon.png
