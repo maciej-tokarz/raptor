@@ -53,7 +53,7 @@ Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (el
 
 Nawet mając mgliste pojęcie o elektronice można wykonać takiego UPS-a. Pewnie wiele mu brakuje do świetności np. zabezpieczenia na wejściu 220 V, powiększonych średnic niektórych padów do 4 mm itp.
 
-Zawsze można coś zmienić i nie jest powiedziane, że tak się nie stanie. Z czasem mam nadzieję, że przy współpracy z fanami komputerków Raspberry, uda się projekt doszlifować.
+Zawsze można coś zmienić i nie jest powiedziane, że tak się nie stanie. Z czasem, mam nadzieję że przy współpracy z fanami komputerków Raspberry, uda się projekt doszlifować.
 
 Wykaz podzespołów:
 
