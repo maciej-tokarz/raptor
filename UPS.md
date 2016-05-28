@@ -33,7 +33,7 @@ W efekcie otrzymamy projekt płytki, który można wydrukować laserowo na papie
 
 ![papier kredowy](images/ups/005.jpg)
 
-a następnie żelazkiem (metoda tzw. termotransferu) na płytkę:
+a następnie żelazkiem (metoda tzw. termotransferu) przenieść na płytkę:
 
 ![pcb 1](images/ups/006.jpg)
 
@@ -51,7 +51,7 @@ Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (el
 ![pcb 1](images/ups/013.jpg)
 ![pcb 1](images/ups/014.jpg)
 
-Nawet mając mgliste pojęcie o elektronice można wykonać takiego UPS-a. Pewnie wiele mu brakuje do świetności np. zabezpieczenia na wejściu 220V, powiększonych średnic niektórych padów do 4 mm itp.
+Nawet mając mgliste pojęcie o elektronice można wykonać takiego UPS-a. Pewnie wiele mu brakuje do świetności np. zabezpieczenia na wejściu 220 V, powiększonych średnic niektórych padów do 4 mm itp.
 
 Zawsze można coś zmienić i nie jest powiedziane, że tak się nie stanie. Z czasem mam nadzieję, że przy współpracy z fanami komputerków Raspberry, uda się projekt doszlifować.
 
