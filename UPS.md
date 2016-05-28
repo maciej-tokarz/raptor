@@ -64,3 +64,5 @@ Wykaz podzespołów:
 * Przetwornica STEP-UP np. SX1308 
 * Diody np. 1N5822 2 szt.
 * Terminal block 2pin 3 szt.
+___
+Maciej Tokarz © My-Poi!
