@@ -72,7 +72,7 @@ Wykaz podzespołów:
 
 * Obudowa Z-40 183x120x76mm czarna: 10 PLN
 * Ogniwa 18650 2 szt.: 50 PLN
-* Koszyka na ogniwa 18650 2 szt.: 5 PLN
+* Koszyki na ogniwa 18650 2 szt.: 5 PLN
 * Zasilacz GLP GPV-20-5 (5 V 3 A): 30 PLN
 * Ładowarka ogniw 18650 np. TP4056 z zabezpieczeniem przed nadmiernym rozładowaniem: 7 PLN
 * Przetwornica STEP-UP np. SX1308: 8 PLN
