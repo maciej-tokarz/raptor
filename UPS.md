@@ -46,7 +46,7 @@ aby po wytrawieniu otrzymać taki efekt:
 ![pcb 1](images/ups/007.jpg)
 
 Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (elektroniki, wsporników płytki czy mocowania np. koszyków na ogniwa), lutowanie elementów, podłączanie przewodów zasilających, włącznika itp.
-https://lh4.googleusercontent.com/-rxxWQpdZDZg/AAAAAAAAAAI/AAAAAAAAMco/dBE3ou3GapQ/s46-c-k-no/photo.jpg
+
 ![pcb 1](images/ups/008.jpg)
 
 ![pcb 1](images/ups/009.jpg)
