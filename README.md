@@ -54,8 +54,6 @@ Piotr - serdeczne dzięki!
 
 Jak powstawał UPS opisałem [tutaj](UPS.md)
 
-UPS Raptora gotowy, opis budowy zamieszczam [tutaj][ups.md]
-
 ##Do zrobienia
 
 Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
