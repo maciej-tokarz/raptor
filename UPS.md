@@ -41,6 +41,8 @@ a następnie żelazkiem (metoda tzw. termotransferu) przenieść na płytkę:
 
 ![pcb 1](images/ups/006.jpg)
 
+* niedokładności korygowałem permanentnym markerem.
+
 aby po wytrawieniu otrzymać taki efekt:
 
 ![pcb 1](images/ups/007.jpg)
