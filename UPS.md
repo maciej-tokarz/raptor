@@ -46,7 +46,7 @@ aby po wytrawieniu otrzymać taki efekt:
 ![pcb 1](images/ups/007.jpg)
 
 Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (elektroniki, wsporników płytki czy mocowania np. koszyków na ogniwa), lutowanie elementów, podłączanie przewodów zasilających, włącznika itp.
-
+https://lh4.googleusercontent.com/-rxxWQpdZDZg/AAAAAAAAAAI/AAAAAAAAMco/dBE3ou3GapQ/s46-c-k-no/photo.jpg
 ![pcb 1](images/ups/008.jpg)
 
 ![pcb 1](images/ups/009.jpg)
@@ -61,7 +61,8 @@ Prace nad płytką to szereg czynności jak: wiercenie otworów montażowych (el
 
 ![pcb 1](images/ups/014.jpg)
 
-Nawet mając mgliste pojęcie o elektronice można wykonać takiego UPS-a. Pewnie wiele mu brakuje do świetności np. zabezpieczenia na wejściu 220 V, powiększonych średnic niektórych padów do 4 mm itp.
+Zdaję sobie sprawę, że wiele w tym projekcie brakuje do świetności np. zabezpieczenia na wejściu 220 V, powiększonych średnic niektórych padów do 4 mm itp.
+Ale mimo to satysfakcja, że zbudowało się coś co działa i spełnia założone funkcje jest gwarantowana :-)
 
 Zawsze można coś zmienić i nie jest powiedziane, że tak się nie stanie. Z czasem, mam nadzieję że przy współpracy z fanami komputerków Raspberry, uda się projekt doszlifować.
 
@@ -69,7 +70,7 @@ Wykaz podzespołów:
 
 * Obudowa Z-40 183x120x76mm czarna
 * Ogniwa 18650 2 szt.
-* Zasilacz GLP GPV-20-5 (5V 3A)
+* Zasilacz GLP GPV-20-5 (5 V 3 A)
 * Ładowarka ogniw 18650 np. TP4056 z zabezpieczeniem przed nadmiernym rozładowaniem
 * Przetwornica STEP-UP np. SX1308 
 * Diody np. 1N5822 2 szt.
