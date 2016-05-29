@@ -52,7 +52,7 @@ Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/view
 
 Piotr - serdeczne dzięki!
 
-Jak powstawał UPS opisałem [tutaj](UPS.md)
+Jak powstawał UPS opisałem [tutaj](UPS.md).
 
 ##Do zrobienia
 
