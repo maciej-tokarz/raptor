@@ -4,7 +4,7 @@
 
 Jak wspomniałem w README, dzięki uprzejmości Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) otrzymałem [schemat](/docs/UPS_mini.png) mini UPS-a.
 Aby wykonać zadanie posłużyłem się darmowym programem [KiCad](http://kicad-pcb.org/).
-Nie miałem nigdy styczności z tego typu programami oraz mam mgliste pojęcie o elektronice, ale udało się :-)
+Nie miałem nigdy styczności z tego typu programami oraz mam mgliste pojęcie o elektronice, ale udało się - [gotowy projekt](/raptor.ups/).
 
 Utworzenie schematu sprowadza się do przygotowania symboli dla poszczególnych podzespołów (określenia pinów wejść i wyjść) oraz połączenia wszystkich punktów w całość:
 
@@ -68,13 +68,16 @@ Zawsze można coś zmienić i nie jest powiedziane, że tak się nie stanie. Z c
 
 Wykaz podzespołów:
 
-* Obudowa Z-40 183x120x76mm czarna
-* Ogniwa 18650 2 szt.
-* Zasilacz GLP GPV-20-5 (5 V 3 A)
-* Ładowarka ogniw 18650 np. TP4056 z zabezpieczeniem przed nadmiernym rozładowaniem
-* Przetwornica STEP-UP np. SX1308 
-* Diody np. 1N5822 2 szt.
-* Terminal block 2pin 3 szt.
+* Obudowa Z-40 183x120x76mm czarna: 10 PLN
+* Ogniwa 18650 2 szt.: 50 PLN
+* Koszyka na ogniwa 18650 2 szt.: 5 PLN
+* Zasilacz GLP GPV-20-5 (5 V 3 A): 30 PLN
+* Ładowarka ogniw 18650 np. TP4056 z zabezpieczeniem przed nadmiernym rozładowaniem: 7 PLN
+* Przetwornica STEP-UP np. SX1308: 8 PLN
+* Diody np. 1N5822 2 szt.: 3 PLN
+* Terminal block 2pin 3 szt.: 2 PLN
+
+RAZEM: 115 PLN
 
 ___
 Maciej Tokarz © My-Poi!
