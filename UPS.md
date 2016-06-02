@@ -5,6 +5,7 @@
 Jak wspomniałem w [README](README.md), dzięki uprzejmości Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) otrzymałem [schemat](/docs/UPS_mini.png) mini UPS-a.
 Aby wykonać zadanie posłużyłem się darmowym programem [KiCad](http://kicad-pcb.org/).
 Nie miałem nigdy styczności z tego typu programami oraz mam mgliste pojęcie o elektronice, ale udało się - [gotowy projekt](/raptor.ups/).
+Dyskusja na [Facebook-u](https://www.facebook.com/groups/malinowepi/permalink/448114628692525/).
 
 Utworzenie schematu sprowadza się do przygotowania symboli dla poszczególnych podzespołów (określenia pinów wejść i wyjść) oraz połączenia wszystkich punktów w całość:
 
