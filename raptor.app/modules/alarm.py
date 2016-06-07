@@ -1,14 +1,16 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
 import time
-from time import gmtime, strftime
-import math
+from time import strftime
+
 
 class Alarm:
-    def __init__(self, avail_space, pir, camera, sms, email):
+    def __init__(self, logger, config, avail_space, pir, camera, sms, email):
         print('Inicjuję alarm.')
+        self.logger = logger
+        self.config = config
         self.avail_space = avail_space
         self.pir = pir
         self.camera = camera
@@ -24,7 +26,7 @@ class Alarm:
         while True:
             time.sleep(0.5)
             if self.pir.is_alarm:
-                if self.alarm_started == False:
+                if not self.alarm_started:
                     print('Alarm: wszczynam alarm!')
                     self.alarm()
 
@@ -54,10 +56,10 @@ class Alarm:
         # Wykonaj serię zdjęć z alarmu.
         self.make_alarm_photos()
 
-        # Wyślij pierwszych sześć zdjęcia z alarmu.
+        # Wyślij pierwszych sześć zdjęć z alarmu.
         self.send_six_alarm_photos()
 
-        # Zdejmij flagi alarmu!
+        # Zdejmij flagę alarmu!
         self.remove_alarm_flag()
 
     def set_alarm_properties(self):
@@ -67,9 +69,15 @@ class Alarm:
     def send_sms(self):
         print('Alarm: wysyłam sms-a.')
         message = 'Raptor: alarm ' + self.alarm_name
-        self.sms.send('123123123', message)
-        self.sms.send('234234234', message)
-        
+        for phone in self.config.recipients_phones:
+            self.sms.send(phone, message)
+
+    # Tylko na czas testów!
+    def send_sms_for_reboot_test(self):
+        print('Alarm: wysyłam sms-a.')
+        message = 'Raptor: reboot'
+        self.sms.send(self.config.phones(0), message)  # Ja
+
     def prepare_alarm_directory(self):
         # Przykładowa lokalizacja: /home/pi/alarms/2016-03-20 1255/
         if not os.path.exists(self.alarm_directory):
@@ -79,9 +87,9 @@ class Alarm:
         print('Alarm: wykonuję serię zdjęć z alarmu.')
         i = 1
         while i <= 90:
-            print(str(self.pir.status)) 
-            if self.pir.status == True:
-                photo_id = str(i).zfill(3)        
+            print(str(self.pir.status))
+            if self.pir.status:
+                photo_id = str(i).zfill(3)
                 self.camera.make_photo(self.alarm_directory, photo_id)
                 self.alarm_photos.append(photo_id)
                 print('Alarm: zrobiłem zdjęcie: ' + photo_id)
@@ -93,17 +101,18 @@ class Alarm:
         counter = 0
         alarm_photos_len = len(self.alarm_photos)
         photos_to_send = []
-        
+
         for i in range(0, 6, 1):
             counter += 1
             if counter > alarm_photos_len: break
             photos_to_send.append(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
-            print(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg') 
-        
+            print(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
+
         self.email.send_photos(
-            ['foo@outlook.com', 'foo2@gmail.com'],
-            'Raptor: pierwsze szesc zdjec z alarmu ' + self.alarm_name, 
-            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych ' + str(alarm_photos_len) + ') z alarmu ' + self.alarm_name, 
+            self.config.recipients_emails,
+            'Raptor: pierwsze szesc zdjec z alarmu ' + self.alarm_name,
+            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych ' + str(
+                alarm_photos_len) + ') z alarmu ' + self.alarm_name,
             photos_to_send)
 
     def remove_alarm_flag(self):

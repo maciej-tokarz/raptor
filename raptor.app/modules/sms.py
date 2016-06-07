@@ -1,19 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 class Sms:
-    def __init__(self, email):
+    def __init__(self, logger, config, email):
         print('Inicjuję sms.')
+        self.logger = logger
+        self.config = config
         self.email = email
 
     def send(self, recipient, message):
-        body = 'from=SMSAPI!&to=48' + recipient + '&raport=1&message=' + message
-        my_message = '''From: Foo <foo@gmail.com>
+        body = 'from={0}&to=48{1}&raport=1&message={2}'.format(self.config.sms_fromSms, recipient, message)
+        message = '''From: {0}
 To: Sms Api <sms.do@smsapi.pl>
-Subject: login@8456fkty567gb3bg37b357b3457b3457
+Subject: {1}
 
-{}'''.format(body)
-        print(my_message)
+{2}'''.format(self.config.sms_fromEmail, self.config.sms_subject, body)
+
+        print(message)
+
         self.email.send_email(
             ['sms.do@smsapi.pl'],
-            my_message)
+            message)

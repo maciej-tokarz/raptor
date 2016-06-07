@@ -4,6 +4,7 @@
 import RPi.GPIO as GPIO
 import time
 
+
 class Pir:
     def __init__(self):
         print('Inicjuję czujkę.')
@@ -20,9 +21,9 @@ class Pir:
             # Odczytaj wskazanie czujki.
             self.status = GPIO.input(self.PIR)
             # Jeśli czujka wykryła ruch.
-            if (self.status == True):
+            if self.status:
                 i += 1
-                print('Pir: licznik ruchu: ' + str(i))
+                print('Pir: licznik ruchu: {0}'.format(i))
                 # Jeśli wskazań czujki o ruchu jest więcej niż poniższy limit wszcznij alarm.
                 if i > 5:
                     print('Pir: wszczynam alarm.')
@@ -30,12 +31,13 @@ class Pir:
                     self.is_alarm = True
                     i = 0
             else:
-                #print('Pir: nie wykryto nic podejrzanego...')
-                if i == 0: i = 0
+                # print('Pir: nie wykryto nic podejrzanego...')
+                if i == 0:
+                    i = 0
                 else:
                     # Jeśli czujka nie wykrywa ruchu wycofuj poziom zagrożenia.
                     i -= 1
-                    print('Pir: licznik ruchu: ' + str(i))
+                    print('Pir: licznik ruchu: {0}'.format(i))
 
-    def gpio_cleanup():
-        GPIO.cleanup()
+                    # def gpio_cleanup():
+                    #    GPIO.cleanup()

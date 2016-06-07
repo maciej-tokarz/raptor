@@ -14,6 +14,7 @@ class RebootScheduler:
 
         def make_reboot():
             if self.alarm.alarm_started == False:
+                #self.alarm.send_sms_for_reboot_test()
                 os.system("shutdown -r now")
-
-        schedule.every().monday.at("05:00").do(make_reboot)
+        # TODO: po testach zmienić na 05:00!
+        schedule.every().monday.at("10:00").do(make_reboot)

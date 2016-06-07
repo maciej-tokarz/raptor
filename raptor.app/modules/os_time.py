@@ -1,20 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import ntplib
-import time
 import os
+import ntplib
+from time import ctime
+
 
 class OsTime:
+    def __init__(self, logger):
+        print('Inicjuję OsTime.')
+        self.logger = logger
 
     def set(self):
         try:
-            client = ntplib.NTPClient()
-            response = client.request('pool.ntp.org')
-            utc_time = response.tx_time
-            os.system("sudo date -s '" + str(time.ctime(utc_time)) + "'")
-            print ('Ustawiłem aktualny czas: ' + str(time.ctime(utc_time)))
+            c = ntplib.NTPClient()
+            response = c.request('europe.pool.ntp.org', version=3)
+            current_time = ctime(response.tx_time)
+            os.system("sudo date -s '{0}'".format(current_time))
+            self.logger.info('Raptor rozpoczął pracę: {0}'.format(current_time))
+
         except Exception as ex:
-            print(str(ex))
-            print ('Nie ustawiłem daty i czasu.')
+            self.logger.error('OsTime: {0}'.format(ex))
             pass
