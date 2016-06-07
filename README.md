@@ -9,7 +9,7 @@ Projekt jest moim pierwszym napisanym w Pythonie więc proszę o wyrozumiałoś�
 
 Raptor to aplikacja, dzięki której możliwe jest dozorowanie wybranego miejsca za pomocą czujki PIR, która identyfikuje naruszenie obszaru przez intruza. 
 W takim przypadku wzbudzany jest alarm, który powiadamia ustalonych odbiorców o zdarzeniu sms-em oraz przez określony czas co sekundę rejestruje zdjęcia z kamery. 
-Na zakończenie alarmu pierwszych sześć zdjęć jest wysyłanych e-mailem. Całość działa w oparciu o komputer Raspberry Pi.
+Na zakończenie alarmu pierwszych sześć zdjęć jest wysyłanych e-mailem. Całość działa w oparciu o komputer Raspberry Pi. Do pisania kodu wykorzystuję [PyCharm](https://www.jetbrains.com/pycharm/).
 
 Zainteresowanych zapraszam do współtworzenia Raptora.
 
@@ -199,7 +199,7 @@ Init1 = AT+CPIN=1234
 [Dialer orange]
 Modem = /dev/ttyUSB0
 Baud = 57600
-Init1 = ATH
+Init1 = ATH0
 Init2 = ATE1
 Init3 = AT+CGDCONT=1,"IP","internet"
 Dial Command = ATD

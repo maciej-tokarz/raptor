@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/maciej_tokarz.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Raptor.sln" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/raptor.app/raptor.app.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/raptor.app/raptor.app.pyproj" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/alarm.py" afterPath="$PROJECT_DIR$/raptor.app/modules/alarm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/camera.py" afterPath="$PROJECT_DIR$/raptor.app/modules/camera.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/email_message.py" afterPath="$PROJECT_DIR$/raptor.app/modules/email_message.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/modem.py" afterPath="$PROJECT_DIR$/raptor.app/modules/modem.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/os_time.py" afterPath="$PROJECT_DIR$/raptor.app/modules/os_time.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/pir.py" afterPath="$PROJECT_DIR$/raptor.app/modules/pir.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/sms.py" afterPath="$PROJECT_DIR$/raptor.app/modules/sms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/schedulers/photos_scheduler.py" afterPath="$PROJECT_DIR$/raptor.app/schedulers/photos_scheduler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/schedulers/reboot_scheduler.py" afterPath="$PROJECT_DIR$/raptor.app/schedulers/reboot_scheduler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="Raptor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,6 +75,7 @@
         <option value="$PROJECT_DIR$/raptor.app/modules/sms.py" />
         <option value="$PROJECT_DIR$/raptor.app/app.py" />
         <option value="$PROJECT_DIR$/raptor.app/raptor.log" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -808,6 +796,20 @@
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="216">
+            <caret line="9" column="153" selection-start-line="9" selection-start-column="153" selection-end-line="9" selection-end-column="153" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="MarkdownFxPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/modules/email_message.py">
