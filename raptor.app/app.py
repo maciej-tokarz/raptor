@@ -38,6 +38,8 @@ class App:
     my_pir = pir.Pir()
     global my_alarm
     my_alarm = alarm.Alarm(
+        my_logger,
+        my_config,
         my_avail_space,
         my_pir,
         my_camera,
@@ -65,6 +67,8 @@ class App:
         # Moduł odpowiedzialny za robienie zdjęć według harmonogramu
         def start_photos_scheduler():
             my_photos_scheduler = photos_scheduler.PhotosScheduler(
+                my_logger,
+                my_config,
                 my_alarm,
                 my_camera,
                 my_email)
@@ -83,7 +87,6 @@ class App:
         # Uruchomienie składników Raptora
         Thread(target=start_pir).start()
         Thread(target=start_alarm).start()
-
         Thread(target=start_photos_scheduler).start()
 
         while True:
