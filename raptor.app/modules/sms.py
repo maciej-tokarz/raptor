@@ -3,9 +3,8 @@
 
 
 class Sms:
-    def __init__(self, logger, config, email):
+    def __init__(self, config, email):
         print('Inicjuję sms.')
-        self.logger = logger
         self.config = config
         self.email = email
 

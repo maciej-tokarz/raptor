@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import configparser
+import ConfigParser
 
 
 class Config:
     def __init__(self, logger):
         print('Inicjuję config.')
         self.__logger = logger
-        self.modem_pin = ''
         self.recipients_phones = ''
         self.recipients_emails = ''
         self.sms_fromSms = ''
@@ -21,9 +20,8 @@ class Config:
         self.smtp_password = ''
 
         try:
-            config = configparser.ConfigParser()
+            config = ConfigParser.ConfigParser()
             config.read('raptor.cfg')
-            self.modem_pin = config.get('Modem', 'pin')
             self.recipients_phones = config.get('Recipients', 'phones').split(',')
             self.recipients_emails = config.get('Recipients', 'emails').split(',')
             self.sms_fromSms = config.get('Sms', 'fromSms')
@@ -36,6 +34,6 @@ class Config:
             self.smtp_password = config.get('Smtp', 'password')
 
         except Exception as ex:
-            self.__logger.error('OsTime: ' + str(ex))
+            self.__logger.error('Config: ' + str(ex))
             pass
 

@@ -38,6 +38,3 @@ class Pir:
                     # Jeśli czujka nie wykrywa ruchu wycofuj poziom zagrożenia.
                     i -= 1
                     print('Pir: licznik ruchu: {0}'.format(i))
-
-                    # def gpio_cleanup():
-                    #    GPIO.cleanup()

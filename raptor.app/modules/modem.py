@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# TODO: python-serial zainstalować!
 import serial
 import time
-import os
+
 
 class Modem:
     def __init__(self, logger):
@@ -15,8 +14,7 @@ class Modem:
 
     def check_modem(self):
         if not self.modem.isOpen():
-            self.logger.warn('Modem: restartuję system z powodu braku połączenia!')
-            os.system("shutdown -r now")
+            self.logger.error('Modem: Brak połączenia z Internetem!')
         else:
             print('Sprawdzenie modemu OK!')
 
