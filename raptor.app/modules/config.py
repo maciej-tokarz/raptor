@@ -18,6 +18,7 @@ class Config:
         self.smtp_user = ''
         self.smtp_userName = ''
         self.smtp_password = ''
+        self.schedulers_photoHour = ''
 
         try:
             config = ConfigParser.ConfigParser()
@@ -32,6 +33,7 @@ class Config:
             self.smtp_user = config.get('Smtp', 'user')
             self.smtp_userName = config.get('Smtp', 'userName')
             self.smtp_password = config.get('Smtp', 'password')
+            self.schedulers_photoHour = config.get('Schedulers', 'photoHour')
 
         except Exception as ex:
             self.__logger.error('Config: ' + str(ex))
