@@ -27,7 +27,7 @@ class App:
     global my_modem
     my_modem = modem.Modem(my_logger)
     global my_camera
-    my_camera = camera.Camera()
+    my_camera = camera.Camera(my_logger)
     global my_email
     my_email = email_message.EmailMessage(my_logger, my_config, my_modem)
     global my_sms
@@ -52,9 +52,6 @@ class App:
         def set_os_time():
             my_os_time = os_time.OsTime(my_logger)
             my_os_time.set()
-
-        # Ustawienie czasu
-        set_os_time()
 
         # Uruchom moduł kontrolujący wskazania czujki ruchu
         def start_pir():

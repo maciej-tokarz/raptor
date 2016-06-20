@@ -27,7 +27,7 @@ class Alarm:
             time.sleep(0.5)
             if self.pir.is_alarm:
                 if not self.alarm_started:
-                    print('Alarm: wszczynam alarm!')
+                    self.logger.info('Alarm: wszczynam alarm!')
                     self.alarm()
 
     def alarm(self):
@@ -72,12 +72,6 @@ class Alarm:
         for phone in self.config.recipients_phones:
             self.sms.send(phone, message)
 
-    # Tylko na czas testów!
-    def send_sms_for_reboot_test(self):
-        print('Alarm: wysyłam sms-a.')
-        message = 'Raptor: reboot'
-        self.sms.send(self.config.phones(0), message)  # Ja
-
     def prepare_alarm_directory(self):
         # Przykładowa lokalizacja: /home/pi/alarms/2016-03-20 1255/
         if not os.path.exists(self.alarm_directory):
@@ -104,7 +98,8 @@ class Alarm:
 
         for i in range(0, 6, 1):
             counter += 1
-            if counter > alarm_photos_len: break
+            if counter > alarm_photos_len:
+                break
             photos_to_send.append(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
             print(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
 
