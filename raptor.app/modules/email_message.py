@@ -50,10 +50,8 @@ class EmailMessage:
             server.starttls()
             server.login(self.config.smtp_user, self.config.smtp_password)
             server.sendmail(self.config.smtp_user, recipients, message)
+            server.close()
             self.logger.info('EmailMessage: e-maila wysłany o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
         except:
             self.logger.error('EmailMessage: wysłanie e-maila się nie powiodło :-(')
             pass
-        finally:
-            server.quit()
-            self.logger.info('EmailMessage: zamknąłem połączenie z serwerem SMTP')
