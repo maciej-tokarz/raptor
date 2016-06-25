@@ -19,7 +19,6 @@ from schedulers import photos_scheduler
 
 
 class App:
-
     global my_logger
     my_logger = logger.Logger()
     global my_config
@@ -29,7 +28,7 @@ class App:
     global my_camera
     my_camera = camera.Camera(my_logger)
     global my_email
-    my_email = email_message.EmailMessage(my_logger, my_config, my_modem)
+    my_email = email_message.EmailMessage(my_logger, my_config)
     global my_sms
     my_sms = sms.Sms(my_config, my_email)
     global my_avail_space
@@ -91,5 +90,5 @@ class App:
             time.sleep(1)
 
     except Exception as ex:
-        my_logger.error('Raptor: {}'.format(ex))
+        my_logger.error('Raptor: {0}'.format(ex))
         pass

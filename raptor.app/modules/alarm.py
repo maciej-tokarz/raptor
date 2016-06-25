@@ -27,7 +27,7 @@ class Alarm:
             time.sleep(0.5)
             if self.pir.is_alarm:
                 if not self.alarm_started:
-                    self.logger.info('Alarm: wszczynam alarm!')
+                    self.logger.info('Alarm: wszczynam alarm! {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
                     self.alarm()
 
     def alarm(self):
@@ -111,6 +111,6 @@ class Alarm:
             photos_to_send)
 
     def remove_alarm_flag(self):
-        print('Alarm: zdejmuję flagi alarmu.')
+        self.logger.info('Alarm: zdejmuję flagi alarmu. {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
         self.pir.is_alarm = False
         self.alarm_started = False
