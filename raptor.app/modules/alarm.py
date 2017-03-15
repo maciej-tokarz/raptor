@@ -5,6 +5,7 @@ import os
 import time
 from time import strftime
 
+# Testowy wpis i sprawdzenie commitowania
 
 class Alarm:
     def __init__(self, logger, config, avail_space, pir, camera, sms, email):
