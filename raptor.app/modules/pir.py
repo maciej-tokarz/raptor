@@ -5,8 +5,9 @@ import RPi.GPIO as GPIO
 import time
 
 
-class Pir:
-    def __init__(self):
+class Pir(object):
+    def __init__(self, config):
+        self.config = config
         print('Inicjuję czujkę.')
         self.PIR_1 = 26
         # self.PIR_2 = 27
@@ -45,7 +46,7 @@ class Pir:
                 i += 1
                 print('Licznik ruchu: {0}'.format(i))
                 # Jeśli wskazań czujki o ruchu jest więcej niż poniższy limit wszcznij alarm
-                if i > 14:
+                if i > 15:
                     print('Wszczynam alarm!')
                     # Wciągnij flagę alarmu
                     self.is_alarm = True
