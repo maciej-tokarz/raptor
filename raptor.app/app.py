@@ -21,8 +21,7 @@ from schedulers import photos_scheduler
 class App(object):
     def __init__(self):
         self.logger = logger.Logger()
-        self.config = config.Config()
-        self.config.read_config()
+        self.config = config.Config().read_config()
         self.modem = modem.Modem(self.logger)
         self.camera = camera.Camera(self.logger)
         self.email = email_message.EmailMessage(self.logger, self.config)
@@ -65,15 +64,15 @@ class App(object):
             # my_sms.send('519585106', 'test')
 
             # Sprawdzenie modemu
-            self.modem.check_modem()
+            self.modem.check()
 
             # Ustawienie czasu
             self.set_os_time()
 
             # Uruchomienie składników Raptora
             Thread(target = self.start_pir).start()
-            # Thread(target=start_alarm).start()
-            # Thread(target=start_photos_scheduler).start()
+            Thread(target = self.start_alarm).start()
+            # Thread(target = self.start_photos_scheduler).start()
 
             while True:
                 schedule.run_pending()

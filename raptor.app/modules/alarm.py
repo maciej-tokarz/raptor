@@ -47,17 +47,14 @@ class Alarm:
         # Przygotuj folder alarmu.
         self.prepare_alarm_directory()
 
-        # Wyślij sms-a z informację o alarmie
-        self.send_sms()
-
-        # Rozgrzej kamerę
-        self.camera.warm_camera()
-
         # Wykonaj serię zdjęć z alarmu
         self.make_alarm_photos()
 
+        # Wyślij sms-a z informację o alarmie
+        # self.send_sms()
+
         # Wyślij pierwszych sześć zdjęć z alarmu
-        self.send_six_alarm_photos()
+        # self.send_six_alarm_photos()
 
         # Zdejmij flagę alarmu!
         self.remove_alarm_flag()
@@ -81,8 +78,8 @@ class Alarm:
         print('Alarm: wykonuję serię zdjęć z alarmu.')
         i = 1
         while i <= 90:
-            print(str(self.pir.status))
-            if self.pir.status:
+            print(str(self.pir.status_1))
+            if self.pir.status_1:
                 photo_id = str(i).zfill(3)
                 self.camera.make_photo(self.alarm_directory, photo_id)
                 self.alarm_photos.append(photo_id)

@@ -12,7 +12,7 @@ class Modem:
         self.modem = serial.Serial('/dev/ttyUSB1', 115200, timeout=5)
         time.sleep(1)
 
-    def check_modem(self):
+    def check(self):
         if not self.modem.isOpen():
             self.logger.error('Modem: Brak połączenia z Internetem!')
         else:

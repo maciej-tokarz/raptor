@@ -23,7 +23,7 @@ class EmailMessage:
         try:
             multipart = MIMEMultipart()
             multipart['Subject'] = subject
-            multipart['From'] = self.config.smtp_userName
+            multipart['From'] = self.config.smtp_username
             multipart['To'] = COMMASPACE.join(recipients)
 
             text = MIMEText(message, 'plain')
@@ -40,7 +40,6 @@ class EmailMessage:
             pass
 
     def send_email(self, recipients, message):
-
         try:
             self.logger.info('EmailMessage: wysyłam e-maila o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
             server = smtplib.SMTP()

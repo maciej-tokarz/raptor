@@ -35,10 +35,10 @@ class Pir(object):
             # self.status_3 = GPIO.input(self.PIR_3)
             # self.status_4 = GPIO.input(self.PIR_4)
 
-            print('Pir 1 - status: {0}'.format(self.status_1))
-            # print('Pir 2 - status: {0}'.format(self.status_2))
-            # print('Pir 3 - status: {0}'.format(self.status_3))
-            # print('Pir 4 - status: {0}'.format(self.status_4))
+            print('Pir 1 status: {0}'.format(self.status_1))
+            # print('Pir 2 status: {0}'.format(self.status_2))
+            # print('Pir 3 status: {0}'.format(self.status_3))
+            # print('Pir 4 status: {0}'.format(self.status_4))
 
             # Jeśli czujka wykryła ruch
             # if self.status_1 or self.status_2 or self.status_3 or self.status_4 and not self.is_alarm:

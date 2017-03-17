@@ -9,12 +9,12 @@ class Sms:
         self.email = email
 
     def send(self, recipient, message):
-        body = 'from={0}&to=48{1}&raport=1&message={2}'.format(self.config.sms_fromSms, recipient, message)
+        body = 'from={0}&to=48{1}&raport=1&message={2}'.format(self.config.sms_from, recipient, message)
         message = '''From: {0}
 To: Sms Api <sms.do@smsapi.pl>
 Subject: {1}
 
-{2}'''.format(self.config.sms_fromEmail, self.config.sms_subject, body)
+{2}'''.format(self.config.sms_email, self.config.sms_subject, body)
 
         print(message)
 
