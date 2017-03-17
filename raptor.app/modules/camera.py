@@ -7,12 +7,15 @@ import time
 
 class Camera:
     def __init__(self, logger):
-        print('Inicjuję kamerę.')
-        self.logger = logger
-        self.camera = picamera.PiCamera()
-        self.camera.resolution = (1920, 1080)
-        self.camera.quality = 100
-        self.camera.exif_tags['IFD0.Copyright'] = 'Raptor'
+        try:
+            print('Inicjuję kamerę.')
+            self.logger = logger
+            self.camera = picamera.PiCamera()
+            self.camera.resolution = (1920, 1080)
+            self.camera.exif_tags['IFD0.Copyright'] = 'Raptor'
+        except Exception as ex:
+            self.logger.error('Camera: {0}'.format(ex))
+            pass
 
     def warm_camera(self):
         self.camera.start_preview()
@@ -25,7 +28,5 @@ class Camera:
             self.camera.capture(file)
             file.close()
         except Exception as ex:
-            self.logger.error('Camera: {}'.format(ex))
+            self.logger.error('Camera: {0}'.format(ex))
             pass
-
-

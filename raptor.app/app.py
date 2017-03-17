@@ -47,7 +47,7 @@ class App:
 
     try:
 
-        # Ustaw czas systemowy na podstawie wzorca z Internetu.
+        # Ustaw czas systemowy na podstawie wzorca z Internetu
         def set_os_time():
             my_os_time = os_time.OsTime(my_logger)
             my_os_time.set()
@@ -80,14 +80,16 @@ class App:
         # Ustawienie czasu
         set_os_time()
 
+        # my_sms.send('519585106', 'test')
+
         # Uruchomienie składników Raptora
         Thread(target=start_pir).start()
-        Thread(target=start_alarm).start()
-        Thread(target=start_photos_scheduler).start()
+        # Thread(target=start_alarm).start()
+        # Thread(target=start_photos_scheduler).start()
 
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+        # while True:
+        #    schedule.run_pending()
+        #    time.sleep(1)
 
     except Exception as ex:
         my_logger.error('Raptor: {0}'.format(ex))

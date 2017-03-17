@@ -9,7 +9,7 @@ class Modem:
     def __init__(self, logger):
         print('Inicjuję modem.')
         self.logger = logger
-        self.modem = serial.Serial('/dev/ttyUSB0', 57600, timeout=5)
+        self.modem = serial.Serial('/dev/ttyUSB1', 115200, timeout=5)
         time.sleep(1)
 
     def check_modem(self):

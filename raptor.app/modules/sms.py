@@ -18,6 +18,4 @@ Subject: {1}
 
         print(message)
 
-        self.email.send_email(
-            ['sms.do@smsapi.pl'],
-            message)
+        self.email.send_email(['sms.do@smsapi.pl'], message)
