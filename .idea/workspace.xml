@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/app.py" afterPath="$PROJECT_DIR$/raptor.app/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/alarm.py" afterPath="$PROJECT_DIR$/raptor.app/modules/alarm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/camera.py" afterPath="$PROJECT_DIR$/raptor.app/modules/camera.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/email_message.py" afterPath="$PROJECT_DIR$/raptor.app/modules/email_message.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/modem.py" afterPath="$PROJECT_DIR$/raptor.app/modules/modem.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/pir.py" afterPath="$PROJECT_DIR$/raptor.app/modules/pir.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/modules/sms.py" afterPath="$PROJECT_DIR$/raptor.app/modules/sms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/schedulers/photos_scheduler.py" afterPath="$PROJECT_DIR$/raptor.app/schedulers/photos_scheduler.py" />
     </list>
     <ignored path="Raptor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="alarm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alarm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raptor.app/modules/alarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1240">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="401">
+              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding>
                 <element signature="e#47#56#0" expanded="true" />
               </folding>
@@ -62,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email_message.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="email_message.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raptor.app/modules/email_message.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+            <state relative-caret-position="72">
+              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -137,11 +131,11 @@
         <option value="$PROJECT_DIR$/raptor.app/modules/config.py" />
         <option value="$PROJECT_DIR$/raptor.app/modules/modem.py" />
         <option value="$PROJECT_DIR$/raptor.app/modules/pir.py" />
-        <option value="$PROJECT_DIR$/raptor.app/modules/email_message.py" />
         <option value="$PROJECT_DIR$/raptor.app/modules/sms.py" />
         <option value="$PROJECT_DIR$/raptor.app/app.py" />
         <option value="$PROJECT_DIR$/raptor.app/modules/camera.py" />
         <option value="$PROJECT_DIR$/raptor.app/modules/alarm.py" />
+        <option value="$PROJECT_DIR$/raptor.app/modules/email_message.py" />
       </list>
     </option>
   </component>
@@ -485,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489761490762</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Poprawka kodu kamery">
+      <created>1489778941906</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1489778941906</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -552,7 +553,8 @@
     <MESSAGE value="Działa" />
     <MESSAGE value="Pierwsze poprawki klasy Pir" />
     <MESSAGE value="Porządki z kodem cd. - config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Porządki z kodem cd. - config" />
+    <MESSAGE value="Poprawka kodu kamery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Poprawka kodu kamery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -838,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/modules/email_message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="41" column="46" lean-forward="false" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/modules/sms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -910,11 +904,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/modules/alarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1240">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="401">
+          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
             <element signature="e#47#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raptor.app/modules/email_message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

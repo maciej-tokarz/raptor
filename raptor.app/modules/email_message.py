@@ -19,7 +19,6 @@ class EmailMessage:
         self.config = config
 
     def send_photos(self, recipients=[], subject='', message='', image_paths=[]):
-
         try:
             multipart = MIMEMultipart()
             multipart['Subject'] = subject

@@ -97,8 +97,9 @@ class Alarm:
             counter += 1
             if counter > alarm_photos_len:
                 break
-            photos_to_send.append(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
-            print(self.alarm_directory + str(self.alarm_photos[i]) + '.jpg')
+            photo_path = '{0}{1}.jpg'.format(self.alarm_directory, str(self.alarm_photos[i]))
+            photos_to_send.append(photo_path)
+            print(photo_path)
 
         self.email.send_photos(
             self.config.recipients_emails,
