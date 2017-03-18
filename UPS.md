@@ -1,4 +1,4 @@
-﻿### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
+### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
 
 ## Realizacja UPS-a do Raptora
 
