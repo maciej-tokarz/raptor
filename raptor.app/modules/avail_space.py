@@ -6,7 +6,7 @@ import shutil
 
 
 class AvailSpace:
-    # Sprawdź ilość dostępnego miejsca i odzyskaj jeśli potrzeba.
+    # Sprawdź ilość dostępnego miejsca i odzyskaj jeśli potrzeba
     def check(self):
         avail_space = self.get_avail_space()
         print(str(avail_space))

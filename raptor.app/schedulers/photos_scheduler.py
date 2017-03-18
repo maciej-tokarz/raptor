@@ -32,4 +32,4 @@ class PhotosScheduler:
             else:
                 self.logger.info('PhotosScheduler: trwa alarm - zdjęcia wg. harmonogramu nie zrobię!')
 
-        schedule.every().day.at(self.config.schedulers_photoHour).do(make_photo)
+        schedule.every().day.at(self.config.schedulers_photo_hour).do(make_photo)

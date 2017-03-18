@@ -101,6 +101,7 @@ $ sudo apt-get upgrade
 ##Instalacja modemu GSM
 
 $ sudo apt-get install ppp usb-modeswitch
+$ sudo apt-get install ppp usb-modeswitch wvdial
 
 $ sudo reboot
 
@@ -114,37 +115,15 @@ $ sudo apt-get upgrade
 
 ##Instalacja klienta NTP
 
-$ sudo cp /home/pi/ntplib.py /usr/lib/python2.7/ntplib.py
+https://pypi.python.org/pypi/ntplib/
 
-##Uruchamianie wraz z systemem modemu i Raptora
-
-$ sudo nano /etc/rc.local
-
-```
-echo -n "Uruchamiam modem...\n"
-/usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
-sleep 10
-lsusb
-
-echo -n "Nawiązanie połączenia...\n"
-wvdial modem-start >/dev/null 2>&1 || true
-sleep 10
-
-pon.wvdial pin orange
-sleep 10
-
-echo -n "Uruchamiam Raptora!\n"
-cd /home/pi/raptor.app
-python app.py
-
-exit 0
-```
+$ sudo cp /home/pi/ntplib-0.3.3/ntplib.py /usr/lib/python2.7/ntplib.py
 
 ##Instalacja Schedule
 
-$ sudo su -
+$ sudo apt-get install python-pip
 
-$ pip install schedule
+$ sudo pip install schedule
 
 ##Aktualizacja Raspberry
 
@@ -209,5 +188,49 @@ Username = "internet"
 Password = "internet"
 Auto DNS = yes
 ```
+
+##Uruchamianie wraz z systemem modemu i Raptora
+
+$ sudo -i
+$ nano raptor.sh
+
+```
+#!/bin/bash
+
+printf "\n"
+printf "Uruchamiam modem...\n"
+/usr/sbin/usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M "55534243123456780000000000000011062000000100000000000000000000"
+sleep 10
+lsusb
+
+printf "Nawiazanie polaczenia...\n"
+wvdial modem-start >/dev/null 2>&1 || true
+sleep 10
+
+pon.wvdial pin orange
+sleep 10
+
+# printf "Uruchamiam Raptora!\n"
+# cd /home/pi/raptor.app
+# python app.py
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is:%s\n" "$_IP"
+fi
+```
+
+$ chmod 755 raptor.sh
+
+nano /etc/rc.local
+```
+/root/raptor.sh &
+exit 0
+```
+sudo bash raptor.sh
+
+
+
 ___
 Maciej Tokarz © My-Poi!

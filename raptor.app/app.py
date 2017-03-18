@@ -18,77 +18,68 @@ from modules import sms
 from schedulers import photos_scheduler
 
 
-class App:
-    global my_logger
-    my_logger = logger.Logger()
-    global my_config
-    my_config = config.Config(my_logger)
-    global my_modem
-    my_modem = modem.Modem(my_logger)
-    global my_camera
-    my_camera = camera.Camera(my_logger)
-    global my_email
-    my_email = email_message.EmailMessage(my_logger, my_config)
-    global my_sms
-    my_sms = sms.Sms(my_config, my_email)
-    global my_avail_space
-    my_avail_space = avail_space.AvailSpace()
-    global my_pir
-    my_pir = pir.Pir()
-    global my_alarm
-    my_alarm = alarm.Alarm(
-        my_logger,
-        my_config,
-        my_avail_space,
-        my_pir,
-        my_camera,
-        my_sms,
-        my_email)
+class App(object):
+    def __init__(self):
+        self.logger = logger.Logger()
+        self.config = config.Config().read_config()
+        self.modem = modem.Modem(self.logger)
+        self.camera = camera.Camera(self.logger)
+        self.email = email_message.EmailMessage(self.logger, self.config)
+        self.sms = sms.Sms(self.config, self.email)
+        self.avail_space = avail_space.AvailSpace()
+        self.pir = pir.Pir(self.config)
+        self.alarm = alarm.Alarm(
+            self.logger,
+            self.config,
+            self.avail_space,
+            self.pir,
+            self.camera,
+            self.sms,
+            self.email)
 
-    try:
+    # Ustaw czas systemowy na podstawie wzorca z Internetu
+    def set_os_time(self):
+        os_time.OsTime(self.logger).set()
 
-        # Ustaw czas systemowy na podstawie wzorca z Internetu.
-        def set_os_time():
-            my_os_time = os_time.OsTime(my_logger)
-            my_os_time.set()
+    # Uruchom moduł kontrolujący wskazania czujki/czujek ruchu
+    def start_pir(self):
+        self.pir.watch()
 
-        # Uruchom moduł kontrolujący wskazania czujki ruchu
-        def start_pir():
-            my_pir.watch()
+    # Uruchom moduł alarmu
+    def start_alarm(self):
+        self.alarm.watch()
 
-        # Uruchom moduł alarmu
-        def start_alarm():
-            my_alarm.watch()
+    # Moduł odpowiedzialny za robienie zdjęć według harmonogramu
+    def start_photos_scheduler(self):
+        my_photos_scheduler = photos_scheduler.PhotosScheduler(
+            self.logger,
+            self.config,
+            self.alarm,
+            self.camera,
+            self.email)
+        my_photos_scheduler.start()
 
-        # Moduł odpowiedzialny za robienie zdjęć według harmonogramu
-        def start_photos_scheduler():
-            my_photos_scheduler = photos_scheduler.PhotosScheduler(
-                my_logger,
-                my_config,
-                my_alarm,
-                my_camera,
-                my_email)
-            my_photos_scheduler.start()
+    def start(self):
+        try:
+            # my_sms.send('519585106', 'test')
 
-        # # # # # # # # # # # # # # # # # #
-        # Tutaj zaczynam działanie Raptora
-        # # # # # # # # # # # # # # # # # #
+            # Sprawdzenie modemu
+            self.modem.check()
 
-        # Sprawdzenie modemu
-        my_modem.check_modem()
+            # Ustawienie czasu
+            self.set_os_time()
 
-        # Ustawienie czasu
-        set_os_time()
+            # Uruchomienie składników Raptora
+            Thread(target = self.start_pir).start()
+            Thread(target = self.start_alarm).start()
+            # Thread(target = self.start_photos_scheduler).start()
 
-        # Uruchomienie składników Raptora
-        Thread(target=start_pir).start()
-        Thread(target=start_alarm).start()
-        Thread(target=start_photos_scheduler).start()
+            while True:
+                schedule.run_pending()
+                time.sleep(1)
 
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+        except Exception as ex:
+            self.logger.error('Raptor: {0}'.format(ex))
 
-    except Exception as ex:
-        my_logger.error('Raptor: {0}'.format(ex))
-        pass
+app = App()
+app.start()
