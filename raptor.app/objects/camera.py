@@ -2,7 +2,7 @@ class Camera(object):
     def __init__(self, id, detector):
         self._id = id
         self._resolution = (1920, 1080)
-        self._copyright = 'Raptor Cam {0}'.format(id)
+        self._copyright = 'Raptor Camera {0}'.format(id)
         self._detector = detector
 
 @property
