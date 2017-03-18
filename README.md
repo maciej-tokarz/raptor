@@ -1,9 +1,9 @@
-﻿![Raptor](/docs/icon.png)
-#Raptor
+﻿![Raptor](docs/icon.png)
+# Raptor
 
-###Udostępniony kod wykorzystujesz na własną odpowiedzialność!
+### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
 
-##Wstęp
+## Wstęp
 
 Projekt jest moim pierwszym napisanym w Pythonie więc proszę o wyrozumiałość :-)
 
@@ -15,7 +15,7 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 
 [Dyskusja na grupie Malinowe Pi (Facebook) o projekcie](https://www.facebook.com/groups/malinowepi/permalink/433256330178355/) <<< Serdeczne dzięki za uwagi!
 
-##Podstawowe funkcje programu
+## Podstawowe funkcje programu
 
 - Raptor na starcie ustawia czas systemowy na podstawie wzorca wg. pool.ntp.org,
 - dozoruje obszar czujką i śledzi jej wskazania,
@@ -30,7 +30,7 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 
 Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https://www.smsapi.pl/mail2sms)
 
-##Podzespoły
+## Podzespoły
 
 - Raspberry Pi,
 - dedykowana kamera wraz podświetleniem IR,
@@ -40,7 +40,7 @@ Do przesyłania sms-ów wykorzystuję API dostępne np. tutaj: [mail2sms](https:
 - modem GSM np. Huawei E3131h-2,
 - UPS opisany poniżej,
 
-##UPS
+## UPS
 
 Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) będę również składał mini UPS do Raspberry. Piotr udostępnił [schemat](/docs/UPS_mini.png) do którego potrzebne są następujące podzespoły:
 
@@ -54,7 +54,7 @@ Piotr - serdeczne dzięki!
 
 Jak powstawał UPS opisałem [tutaj](UPS.md).
 
-##Do zrobienia
+## Do zrobienia
 
 Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
 
@@ -64,7 +64,7 @@ Projekt można, a nawet trzeba rozwijać. Do zrobienia jest choćby:
 - dodanie - po sms-ie informacyjnym o alarmie - połączenia z telefonem odbiorcy
 - listę uzupełnię o informacje zebrane w [dyskusji na grupie Malinowe Pi na Facebook-u](https://www.facebook.com/groups/malinowepi/permalink/433256330178355/)
 
-##Instalacja Raspbiana Jessie
+## Instalacja Raspbiana Jessie
 
 Jako podstawę działania posłuży wersja:
 
@@ -78,7 +78,7 @@ Po zainstalowaniu należy:
 - włączyć obsługę GPIO
 - włączyć obsługę Serial
 
-##Instalacja karty WiFi
+## Instalacja karty WiFi
 
 $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
@@ -88,7 +88,8 @@ network={
     psk="hasło"
 }
 ```
-##Instalacja Pythona
+
+## Instalacja Pythona
 
 [INSTALLING PYTHON PACKAGES](https://www.raspberrypi.org/documentation/linux/software/python.md)
 
@@ -98,14 +99,14 @@ $ sudo apt-get install python-picamera
 
 $ sudo apt-get upgrade
 
-##Instalacja modemu GSM
+## Instalacja modemu GSM
 
 $ sudo apt-get install ppp usb-modeswitch
 $ sudo apt-get install ppp usb-modeswitch wvdial
 
 $ sudo reboot
 
-##Instalacja Python Serial
+## Instalacja Python Serial
 
 $ sudo apt-get install python-serial
 
@@ -113,47 +114,47 @@ $ sudo apt-get update
 
 $ sudo apt-get upgrade
 
-##Instalacja klienta NTP
+## Instalacja klienta NTP
 
 https://pypi.python.org/pypi/ntplib/
 
 $ sudo cp /home/pi/ntplib-0.3.3/ntplib.py /usr/lib/python2.7/ntplib.py
 
-##Instalacja Schedule
+## Instalacja Schedule
 
 $ sudo apt-get install python-pip
 
 $ sudo pip install schedule
 
-##Aktualizacja Raspberry
+## Aktualizacja Raspberry
 
 $ sudo apt-get install rpi-update && sudo rpi-update && sudo reboot 
 
-##Usuwanie pamięci tymczasowej instalatora na wypadek przerwania jego pracy
+## Usuwanie pamięci tymczasowej instalatora na wypadek przerwania jego pracy
 
 $ sudo rm /var/lib/dpkg/lock
 
 $ sudo dpkg --configure -a
 
-##Sprawdzenie wolnej przestrzeni systemu plików
+## Sprawdzenie wolnej przestrzeni systemu plików
 
 $ df -Bm
 
-##Usunięcie plików alarmu
+## Usunięcie plików alarmu
 
 $ sudo rm -rf /home/pi/alarms
 
-##Uruchomienie skryptu Pythona
+## Uruchomienie skryptu Pythona
 
 $ sudo python /home/pi/raptor.app/raptor.app.py
 
-##Wyłączenie diody kamery
+## Wyłączenie diody kamery
 
 $ sudo nano /boot/config.txt
 
 disable_camera_led=1
 
-##Ustawienia modemu GSM
+## Ustawienia modemu GSM
 
 [Poradnik: Instalacja i obsługa modemu 3G](https://dug.net.pl/drukuj/132/huawei_e122___instalacja_i_obsluga_modemu_3g/)
 
@@ -189,7 +190,7 @@ Password = "internet"
 Auto DNS = yes
 ```
 
-##Uruchamianie wraz z systemem modemu i Raptora
+## Uruchamianie wraz z systemem modemu i Raptora
 
 $ sudo -i
 $ nano raptor.sh
