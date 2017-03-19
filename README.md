@@ -1,4 +1,4 @@
-﻿![Raptor](docs/icon.png)
+![Raptor](docs/icon.png)
 # Raptor
 
 ### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
