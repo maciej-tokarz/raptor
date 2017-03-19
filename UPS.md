@@ -1,6 +1,6 @@
-﻿###Udostępniony kod wykorzystujesz na własną odpowiedzialność!
+### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
 
-##Realizacja UPS-a do Raptora
+## Realizacja UPS-a do Raptora
 
 Jak wspomniałem w [README](README.md), dzięki uprzejmości Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/viewtopic.php?f=8&t=653&hilit=ups) otrzymałem [schemat](/docs/UPS_mini.png) mini UPS-a.
 Aby wykonać zadanie posłużyłem się darmowym programem [KiCad](http://kicad-pcb.org/).

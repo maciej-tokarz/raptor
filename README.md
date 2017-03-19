@@ -101,7 +101,6 @@ $ sudo apt-get upgrade
 
 ## Instalacja modemu GSM
 
-$ sudo apt-get install ppp usb-modeswitch
 $ sudo apt-get install ppp usb-modeswitch wvdial
 
 $ sudo reboot
