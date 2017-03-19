@@ -5,6 +5,9 @@ import time
 from threading import Thread
 import schedule
 
+from objects import camera
+from objects import detector
+
 from modules import logger
 from modules import config
 from modules import os_time
@@ -20,6 +23,7 @@ from schedulers import photos_scheduler
 
 class App(object):
     def __init__(self):
+        self.camera_1 =
         self.logger = logger.Logger()
         self.config = config.Config().read_config()
         self.modem = modem.Modem(self.logger)
@@ -36,6 +40,7 @@ class App(object):
             self.camera,
             self.sms,
             self.email)
+
 
     # Ustaw czas systemowy na podstawie wzorca z Internetu
     def set_os_time(self):
@@ -61,13 +66,17 @@ class App(object):
 
     def start(self):
         try:
-            # my_sms.send('519585106', 'test')
+
+            # Ustaw GPIO
+            GPIO.setmode(GPIO.BOARD)
 
             # Sprawdzenie modemu
             self.modem.check()
 
             # Ustawienie czasu
             self.set_os_time()
+
+            # my_sms.send('519585106', 'test')
 
             # Uruchomienie składników Raptora
             Thread(target = self.start_pir).start()
