@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source D:/Projekty/Raptor/raptor.cam/camera.sch)
-    (date "31.03.2017 08:42:03")
+    (date "31.03.2017 10:45:43")
     (tool "Eeschema 4.0.5")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
