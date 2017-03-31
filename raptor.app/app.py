@@ -7,6 +7,9 @@ import schedule
 import RPi.GPIO as GPIO
 
 from objects import protected_area as area
+
+from modules import *
+# zamienić poniższe:
 from modules import logger
 from modules import config
 from modules import os_time
