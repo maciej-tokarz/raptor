@@ -192,6 +192,7 @@ Auto DNS = yes
 ## Uruchamianie wraz z systemem modemu i Raptora
 
 $ sudo -i
+
 $ nano raptor.sh
 
 ```
@@ -223,7 +224,8 @@ fi
 
 $ chmod 755 raptor.sh
 
-nano /etc/rc.local
+$ sudo nano /etc/rc.local
+
 ```
 /root/raptor.sh &
 exit 0
