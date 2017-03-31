@@ -1,8 +1,0 @@
-(module flat_cable_connector_5pin (layer F.Cu) (tedit 58DD7E09)
-  (fp_text reference Ref** (at 1 2.5) (layer F.SilkS)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value Val** (at 0 1) (layer F.Fab)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-)
