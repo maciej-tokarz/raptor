@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/raptor.app/objects/detector.py" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="Początki obiektowości cd.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Raptor.iml" afterPath="$PROJECT_DIR$/.idea/Raptor.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -53,7 +51,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="295">
-                <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+                <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -533,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489937745559</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Test">
+      <created>1491421665619</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1491421665619</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -612,7 +617,8 @@
     <MESSAGE value="Poprawka Readme" />
     <MESSAGE value="Początki obiektowości" />
     <MESSAGE value="Początki obiektowości cd." />
-    <option name="LAST_COMMIT_MESSAGE" value="Początki obiektowości cd." />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -949,7 +955,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="295">
-            <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
             <folding />
           </first_editor>
           <second_editor />
