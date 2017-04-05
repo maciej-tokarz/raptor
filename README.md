@@ -17,6 +17,7 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 
 ## Podstawowe funkcje programu
 
+- Monitorowanie kilku zdefiniwanych obszarów,
 - Raptor na starcie ustawia czas systemowy na podstawie wzorca wg. pool.ntp.org,
 - dozoruje obszar czujką i śledzi jej wskazania,
 - po otrzymaniu określonej ilości wskazań pozytywnych czujki aktywuje alarm,
