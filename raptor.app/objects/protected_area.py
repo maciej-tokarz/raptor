@@ -1,23 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# from objects import camera
+from objects import camera
 # from objects import detector
 
-import objects
-
-
 class ProtectedArea(object):
-    def __init__(self, logger, area_id, detector_gpio_pin, gpio):
+    def __init__(self, logger, area_no, detector_gpio_pin, gpio, cameras_switcher, pi_camera):
         self.logger = logger
-        self.id = area_id
-        self.camera = objects.Camera(area_id)
-        self.detector = objects.Detector(detector_gpio_pin, gpio)
+        self._area_no = area_no
+        self._cameras_switcher = cameras_switcher
+        self._camera = camera.Camera(area_no, cameras_switcher, pi_camera)
+        # self.detector = detector.Detector(detector_gpio_pin, gpio)
 
     def make_photo(self, path, file_name):
         try:
-            if self.detector.status:
-                self.camera.capture(path, file_name)
+            self._camera.capture(path, file_name)
+            # if self.detector.status:
+            #     self._camera.capture(path, file_name)
         except Exception as ex:
             self.logger.error('ProtectedArea: {0}'.format(ex))
             pass

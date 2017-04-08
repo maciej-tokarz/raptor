@@ -1,32 +1,47 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import time
-from threading import Thread
-import schedule
+# import time
+# from threading import Thread
+# import schedule
 import RPi.GPIO as GPIO
+import os
+import sys
 
+sys.path.append("/home/pi/raptor.app/controllers")
+sys.path.append("/home/pi/raptor.app/modules")
+sys.path.append("/home/pi/raptor.app/objects")
+sys.path.append("/home/pi/raptor.app/schedulers")
+
+from picamera import PiCamera
+from objects import cameras_switcher as switcher
 from objects import protected_area as area
 
-from modules import *
+# from modules import *
 # zamienić poniższe:
 from modules import logger
-from modules import config
-from modules import os_time
-from modules import modem
-from modules import alarm
-from modules import avail_space
-from modules import camera
-from modules import email_message
-from modules import pir
-from modules import sms
-from schedulers import photos_scheduler
+# from modules import config
+# from modules import os_time
+# from modules import modem
+# from modules import alarm
+# from modules import avail_space
+# from modules import camera
+# from modules import email_message
+# from modules import pir
+# from modules import sms
+# from schedulers import photos_scheduler
 
 
 class App(object):
     def __init__(self):
-        self.gpio = GPIO
         self.logger = logger.Logger()
+        self.gpio = GPIO
+        self.gpio.setwarnings(False)
+        self.gpio.setmode(self.gpio.BOARD)
+        self.cameras_switcher = switcher.CamerasSwitcher(self.gpio)
+        self.pi_camera = PiCamera()
+        self.pi_camera.resolution = (1920, 1080)
+
         # self.config = config.Config().read_config()
         # self.modem = modem.Modem(self.logger)
         # self.camera = camera.Camera(self.logger)
@@ -67,13 +82,10 @@ class App(object):
 
     def start(self):
         try:
-
-            # Ustaw GPIO
-            self.gpio.setmode(self.gpio.BOARD)
-
-            # Test
-            area_1 = area.ProtectedArea(self.logger, 1, 27, self.gpio)
-            area_1.make_photo('/home/pi/alarms/', 'test')
+            area_1 = area.ProtectedArea(self.logger, 'A', 20, self.gpio, self.cameras_switcher, self.pi_camera)
+            area_2 = area.ProtectedArea(self.logger, 'B', 21, self.gpio, self.cameras_switcher, self.pi_camera)
+            area_1.make_photo('/home/pi/alarms/', 'test_a')
+            area_2.make_photo('/home/pi/alarms/', 'test_b')
 
             # Sprawdzenie modemu
             # self.modem.check()
