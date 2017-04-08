@@ -14,12 +14,13 @@ sys.path.append("/home/pi/raptor.app/schedulers")
 
 from picamera import PiCamera
 from objects import cameras_switcher as switcher
-from objects import protected_area as area
+from objects import protected_areas as areas
+from controllers import detectors
 
 # from modules import *
 # zamienić poniższe:
 from modules import logger
-# from modules import config
+from modules import config
 # from modules import os_time
 # from modules import modem
 # from modules import alarm
@@ -34,13 +35,18 @@ from modules import logger
 class App(object):
     def __init__(self):
         self.logger = logger.Logger()
+
         gpio.setwarnings(False)
         gpio.setmode(gpio.BOARD)
+
         self.cameras_switcher = switcher.CamerasSwitcher(gpio)
         self.pi_camera = PiCamera()
         self.pi_camera.resolution = (1920, 1080)
 
-        # self.config = config.Config().read_config()
+        self.protected_areas = areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
+        self.config = config.Config().read_config()
+        self.detectors = detectors.Detectors(self.config, self.protected_areas)
+
         # self.modem = modem.Modem(self.logger)
         # self.camera = camera.Camera(self.logger)
         # self.email = email_message.EmailMessage(self.logger, self.config)
@@ -80,18 +86,17 @@ class App(object):
 
     def start(self):
         try:
-            area_a = area.ProtectedArea(self.logger, 'A', gpio, 31, self.cameras_switcher, self.pi_camera)
-            area_b = area.ProtectedArea(self.logger, 'B', gpio, 33, self.cameras_switcher, self.pi_camera)
-            # area_c = area.ProtectedArea(self.logger, 'C', gpio, 35, self.cameras_switcher, self.pi_camera)
-            # area_d = area.ProtectedArea(self.logger, 'D', gpio, 37, self.cameras_switcher, self.pi_camera)
+            self.detectors.watch()
 
-            area_a.make_photo('/home/pi/alarms/', 'test_a')
-            area_b.make_photo('/home/pi/alarms/', 'test_b')
-
-            while True:
-                time.sleep(0.5)
-                print('Detector A: {0}'.format(area_a.detector_status))
-                print('Detector B: {0}'.format(area_b.detector_status))
+            # counter = 0
+            # while True:
+            #     time.sleep(0.5)
+            #     self.protected_areas.area_a.make_photo('/home/pi/alarms/', 'test_a_{0}'.format(counter))
+            #     self.protected_areas.area_b.make_photo('/home/pi/alarms/', 'test_b_{0}'.format(counter))
+            #     # area_b.make_photo('/home/pi/alarms/', 'test_b_{0}'.format(counter))
+            #     print('A: {0}'.format(self.protected_areas.area_a.detector_status))
+            #     print('B: {0}'.format(self.protected_areas.area_b.detector_status))
+            #     counter += 1
 
             # Sprawdzenie modemu
             # self.modem.check()
