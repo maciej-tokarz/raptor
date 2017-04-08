@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# import time
+import RPi.GPIO as gpio
+import sys
+import time
 # from threading import Thread
 # import schedule
-import RPi.GPIO as GPIO
-import os
-import sys
 
 sys.path.append("/home/pi/raptor.app/controllers")
 sys.path.append("/home/pi/raptor.app/modules")
@@ -35,10 +34,9 @@ from modules import logger
 class App(object):
     def __init__(self):
         self.logger = logger.Logger()
-        self.gpio = GPIO
-        self.gpio.setwarnings(False)
-        self.gpio.setmode(self.gpio.BOARD)
-        self.cameras_switcher = switcher.CamerasSwitcher(self.gpio)
+        gpio.setwarnings(False)
+        gpio.setmode(gpio.BOARD)
+        self.cameras_switcher = switcher.CamerasSwitcher(gpio)
         self.pi_camera = PiCamera()
         self.pi_camera.resolution = (1920, 1080)
 
@@ -82,10 +80,18 @@ class App(object):
 
     def start(self):
         try:
-            area_1 = area.ProtectedArea(self.logger, 'A', 20, self.gpio, self.cameras_switcher, self.pi_camera)
-            area_2 = area.ProtectedArea(self.logger, 'B', 21, self.gpio, self.cameras_switcher, self.pi_camera)
-            area_1.make_photo('/home/pi/alarms/', 'test_a')
-            area_2.make_photo('/home/pi/alarms/', 'test_b')
+            area_a = area.ProtectedArea(self.logger, 'A', gpio, 31, self.cameras_switcher, self.pi_camera)
+            area_b = area.ProtectedArea(self.logger, 'B', gpio, 33, self.cameras_switcher, self.pi_camera)
+            # area_c = area.ProtectedArea(self.logger, 'C', gpio, 35, self.cameras_switcher, self.pi_camera)
+            # area_d = area.ProtectedArea(self.logger, 'D', gpio, 37, self.cameras_switcher, self.pi_camera)
+
+            area_a.make_photo('/home/pi/alarms/', 'test_a')
+            area_b.make_photo('/home/pi/alarms/', 'test_b')
+
+            while True:
+                time.sleep(0.5)
+                print('Detector A: {0}'.format(area_a.detector_status))
+                print('Detector B: {0}'.format(area_b.detector_status))
 
             # Sprawdzenie modemu
             # self.modem.check()

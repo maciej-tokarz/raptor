@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="Test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raptor.app/controllers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py" />
+    <list default="true" id="187f4997-921b-49b1-b092-20b218af93ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop.ini" afterPath="$PROJECT_DIR$/desktop.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/app.py" afterPath="$PROJECT_DIR$/raptor.app/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/objects/camera.py" afterPath="$PROJECT_DIR$/raptor.app/objects/camera.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/objects/detector.py" afterPath="$PROJECT_DIR$/raptor.app/objects/detector.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raptor.app/objects/protected_area.py" afterPath="$PROJECT_DIR$/raptor.app/objects/protected_area.py" />
     </list>
@@ -29,13 +25,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raptor.app/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1418">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="538">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
-                <element signature="e#110#133#0" expanded="true" />
+                <element signature="e#47#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,8 +40,20 @@
       <file leaf-file-name="protected_area.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raptor.app/objects/protected_area.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="253">
+              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="e#47#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="camera.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raptor.app/objects/camera.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,29 +62,31 @@
       <file leaf-file-name="cameras_switcher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="350">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="camera.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raptor.app/objects/camera.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detector.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detector.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raptor.app/objects/detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="150">
               <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detectors.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raptor.app/controllers/detectors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding>
+                <element signature="e#47#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,11 +150,11 @@
         <option value="$PROJECT_DIR$/raptor.app/modules/email_message.py" />
         <option value="$PROJECT_DIR$/raptor.app/objects/protected-area.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/raptor.app/objects/detector.py" />
-        <option value="$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py" />
         <option value="$PROJECT_DIR$/raptor.app/objects/camera.py" />
+        <option value="$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py" />
         <option value="$PROJECT_DIR$/raptor.app/objects/protected_area.py" />
         <option value="$PROJECT_DIR$/raptor.app/app.py" />
+        <option value="$PROJECT_DIR$/raptor.app/objects/detector.py" />
       </list>
     </option>
   </component>
@@ -574,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491421717932</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Zapis postepów - kamery">
+      <created>1491637575127</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1491637575127</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -672,7 +689,8 @@
     <MESSAGE value="Początki obiektowości" />
     <MESSAGE value="Początki obiektowości cd." />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Zapis postepów - kamery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zapis postepów - kamery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -917,13 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/modules/pir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/modules/camera.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -953,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/controllers/detectors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/modules/logger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -981,45 +985,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/objects/detector.py">
+    <entry file="file://$PROJECT_DIR$/raptor.app/objects/protected_area.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="253">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#47#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/objects/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="297">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/objects/protected_area.py">
+    <entry file="file://$PROJECT_DIR$/raptor.app/controllers/detectors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#47#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raptor.app/objects/cameras_switcher.py">
+    <entry file="file://$PROJECT_DIR$/raptor.app/modules/pir.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="255">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raptor.app/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1418">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="538">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <element signature="e#110#133#0" expanded="true" />
+            <element signature="e#47#70#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raptor.app/objects/detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
