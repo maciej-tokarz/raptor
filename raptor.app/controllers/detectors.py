@@ -23,7 +23,7 @@ class Detectors(object):
     def is_alarm(self, value):
         self._is_alarm = value
 
-    def watch(self):
+    def track_detectors(self):
         i = 0
         while True:
             time.sleep(0.5)

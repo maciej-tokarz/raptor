@@ -26,7 +26,7 @@ class Alarm:
         return self._alarm_is_started
 
     # Monitoruj wskazania czujek
-    def watch(self):
+    def arming_alarm(self):
         while True:
             time.sleep(0.5)
             if self.detectors_controller.is_alarm:

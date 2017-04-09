@@ -1,17 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import RPi.GPIO as gpio
 import schedule
 import time
 from threading import Thread
-
-sys.path.append("/home/pi/raptor.app/controllers")
-sys.path.append("/home/pi/raptor.app/modules")
-sys.path.append("/home/pi/raptor.app/objects")
-sys.path.append("/home/pi/raptor.app/schedulers")
-
 from picamera import PiCamera
 
 from controllers import detectors
@@ -20,8 +13,8 @@ from controllers import alarm
 
 from objects import logger
 from objects import config
-from objects import cameras_switcher as switcher
-from objects import protected_areas as areas
+from objects import cameras_switcher
+from objects import protected_areas
 from objects import modem
 from objects import email_message
 from objects import sms
@@ -32,17 +25,17 @@ from schedulers import photos_scheduler
 
 class App(object):
     def __init__(self):
+        gpio.setwarnings(False)
+        gpio.setmode(gpio.BOARD)
+
         self.logger = logger.Logger()
         self.config = config.Config()
         self.config.read_config()
 
-        gpio.setwarnings(False)
-        gpio.setmode(gpio.BOARD)
-
-        self.cameras_switcher = switcher.CamerasSwitcher(gpio)
+        self.cameras_switcher = cameras_switcher.CamerasSwitcher(gpio)
         self.pi_camera = PiCamera()
         self.pi_camera.resolution = (1920, 1080)
-        self.protected_areas = areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
+        self.protected_areas = protected_areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
         self.modem = modem.Modem(self.logger)
         self.email = email_message.EmailMessage(self.logger, self.config)
         self.sms = sms.Sms(self.config, self.email)
@@ -63,12 +56,12 @@ class App(object):
         os_time.OsTime(self.logger).set()
 
     # Uruchomienie czujek PIR
-    def start_detectors(self):
-        self.detectors_controller.watch()
+    def track_detectors(self):
+        self.detectors_controller.track_detectors()
 
     # Uzbrojenie alarmu
     def arming_alarm(self):
-        self.alarm_controller.watch()
+        self.alarm_controller.arming_alarm()
 
     # Wykonywanie zdjęć według harmonogramu
     def start_photos_scheduler(self):
@@ -85,7 +78,7 @@ class App(object):
             self.modem.check()
             self.set_os_time()
 
-            Thread(target=self.start_detectors).start()
+            Thread(target=self.track_detectors).start()
             Thread(target=self.arming_alarm).start()
             Thread(target=self.start_photos_scheduler).start()
 
@@ -93,7 +86,7 @@ class App(object):
                 schedule.run_pending()
                 time.sleep(1)
 
-            # Testy
+            # Tests
             # self.sms.send('519585106', 'test')
 
         except Exception as ex:
