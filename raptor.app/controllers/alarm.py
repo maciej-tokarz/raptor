@@ -42,7 +42,7 @@ class Alarm:
         # Sprawdź dostępną przestrzeń karty pamięci
         self.avail_space_controller.check()
 
-        # Wyzeruj identyfikatory zdjęć z alarmu
+        # Wyzeruj identyfikatory zdjęć z poprzedniego alarmu
         self.alarm_photos = []
 
         # Określ właściwości alarmu
@@ -55,10 +55,10 @@ class Alarm:
         self.make_alarm_photos()
 
         # Wyślij sms-a z informację o alarmie
-        # self.send_sms()
+        self.send_sms()
 
         # Wyślij pierwszych sześć zdjęć z alarmu
-        # self.send_six_alarm_photos()
+        self.send_six_alarm_photos()
 
         # Zdejmij flagę alarmu!
         self.remove_alarm_flag()
@@ -79,17 +79,27 @@ class Alarm:
 
     def make_alarm_photos(self):
         print('Alarm: wykonuję serię zdjęć z alarmu.')
-        return
-        # i = 1
-        # while i <= 90:
-        #     print(str(self.pir.status_1))
-        #     if self.pir.status_1:
-        #         photo_id = str(i).zfill(3)
-        #         self.camera.make_photo(self.alarm_directory, photo_id)
-        #         self.alarm_photos.append(photo_id)
-        #         print('Alarm: zrobiłem zdjęcie: {0}'.format(photo_id))
-        #     time.sleep(1)
-        #     i += 1
+        i = 1
+        while i <= 90:
+            photo_id = str(i).zfill(3)
+            if self.config.area_a:
+                file_name_a = '{0}_a'.format(photo_id)
+                self.protected_areas_controller.area_a.make_photo(self.alarm_directory, file_name_a)
+                self.alarm_photos.append(file_name_a)
+            if self.config.area_b:
+                file_name_b = '{0}_b'.format(photo_id)
+                self.protected_areas_controller.area_b.make_photo(self.alarm_directory, file_name_b)
+                self.alarm_photos.append(file_name_b)
+            if self.config.area_c:
+                file_name_c = '{0}_c'.format(photo_id)
+                self.protected_areas_controller.area_c.make_photo(self.alarm_directory, file_name_c)
+                self.alarm_photos.append(file_name_c)
+            if self.config.area_d:
+                file_name_d = '{0}_d'.format(photo_id)
+                self.protected_areas_controller.area_d.make_photo(self.alarm_directory, file_name_d)
+                self.alarm_photos.append(file_name_d)
+            time.sleep(1)
+            i += 1
 
     def send_six_alarm_photos(self):
         print('Alarm: wysyłam pierwsze sześć zdjęć z alarmu.')
@@ -101,14 +111,15 @@ class Alarm:
             counter += 1
             if counter > alarm_photos_len:
                 break
-            photo_path = '{0}{1}.jpg'.format(self.alarm_directory, str(self.alarm_photos[i]))
+            photo_path = '{0}{1}.jpg'.format(self.alarm_directory, self.alarm_photos[i])
             photos_to_send.append(photo_path)
-            print(photo_path)
 
         self.email.send_photos(
             self.config.recipients_emails,
             'Raptor: pierwsze szesc zdjec z alarmu {0}'.format(self.alarm_name),
-            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych {0}) z alarmu {1}'.format(str(alarm_photos_len), self.alarm_name),
+            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych {0}) z alarmu {1}'.format(
+                alarm_photos_len,
+                self.alarm_name),
             photos_to_send)
 
     def remove_alarm_flag(self):
