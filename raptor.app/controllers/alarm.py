@@ -7,12 +7,12 @@ from time import strftime
 
 
 class Alarm:
-    def __init__(self, logger, config, avail_space, detectors, protected_areas, sms, email):
+    def __init__(self, logger, config, avail_space_controller, detectors_controller, protected_areas, sms, email):
         print('Inicjuję alarm.')
         self.logger = logger
         self.config = config
-        self.avail_space = avail_space
-        self.detectors = detectors
+        self.avail_space_controller = avail_space_controller
+        self.detectors_controller = detectors_controller
         self.protected_areas = protected_areas
         self.sms = sms
         self.email = email
@@ -29,7 +29,7 @@ class Alarm:
     def watch(self):
         while True:
             time.sleep(0.5)
-            if self.detectors.is_alarm:
+            if self.detectors_controller.is_alarm:
                 if not self._alarm_is_started:
                     self.logger.info('Alarm: wszczynam alarm!')
                     self.start_alarm()
@@ -40,7 +40,7 @@ class Alarm:
         self._alarm_is_started = True
 
         # Sprawdź dostępną przestrzeń karty pamięci
-        self.avail_space.check()
+        self.avail_space_controller.check()
 
         # Wyzeruj identyfikatory zdjęć z alarmu
         self.alarm_photos = []
@@ -113,5 +113,5 @@ class Alarm:
 
     def remove_alarm_flag(self):
         self.logger.info('Alarm: zdejmuję flagi alarmu.')
-        self.detectors.is_alarm = False
+        self.detectors_controller.is_alarm = False
         self._alarm_is_started = False
