@@ -35,16 +35,19 @@ class App(object):
         self.logger = logger.Logger()
         self.config = config.Config()
         self.config.read_config()
+
         gpio.setwarnings(False)
         gpio.setmode(gpio.BOARD)
+
         self.cameras_switcher = switcher.CamerasSwitcher(gpio)
         self.pi_camera = PiCamera()
         self.pi_camera.resolution = (1920, 1080)
         self.protected_areas = areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
-        self.detectors_controller = detectors.Detectors(self.config, self.protected_areas)
         self.modem = modem.Modem(self.logger)
         self.email = email_message.EmailMessage(self.logger, self.config)
         self.sms = sms.Sms(self.config, self.email)
+
+        self.detectors_controller = detectors.Detectors(self.config, self.protected_areas)
         self.avail_space_controller = avail_space.AvailSpace()
         self.alarm_controller = alarm.Alarm(
             self.logger,
