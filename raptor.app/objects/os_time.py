@@ -16,6 +16,7 @@ class OsTime:
             c = ntplib.NTPClient()
             response = c.request('europe.pool.ntp.org', version=3)
             current_time = ctime(response.tx_time)
+            # current_time = 'Sun Apr 09 21:15:06 2017'
             os.system("sudo date -s '{0}'".format(current_time))
             self.logger.info('Raptor rozpoczął pracę: {0}'.format(current_time))
 
