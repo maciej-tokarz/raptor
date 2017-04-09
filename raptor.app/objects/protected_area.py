@@ -17,7 +17,14 @@ class ProtectedArea(object):
             if self.detector.status:
                 self.camera.capture(path, file_name)
         except Exception as ex:
-            self.logger.error('ProtectedArea {0}: {1}'.format(self.area_no, ex))
+            self.logger.error('ProtectedArea {0} (make_photo): {1}'.format(self.area_no, ex))
+            pass
+
+    def camera_capture(self, path, file_name):
+        try:
+            self.camera.capture(path, file_name)
+        except Exception as ex:
+            self.logger.error('ProtectedArea {0} (camera_capture): {1}'.format(self.area_no, ex))
             pass
 
     @property

@@ -33,24 +33,24 @@ from schedulers import photos_scheduler
 class App(object):
     def __init__(self):
         self.logger = logger.Logger()
+        self.config = config.Config()
+        self.config.read_config()
         gpio.setwarnings(False)
         gpio.setmode(gpio.BOARD)
         self.cameras_switcher = switcher.CamerasSwitcher(gpio)
         self.pi_camera = PiCamera()
         self.pi_camera.resolution = (1920, 1080)
         self.protected_areas = areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
-        self.config = config.Config()
-        self.config.read_config()
-        self.detectors = detectors.Detectors(self.config, self.protected_areas)
+        self.detectors_controller = detectors.Detectors(self.config, self.protected_areas)
         self.modem = modem.Modem(self.logger)
         self.email = email_message.EmailMessage(self.logger, self.config)
         self.sms = sms.Sms(self.config, self.email)
-        self.avail_space = avail_space.AvailSpace()
-        self.alarm = alarm.Alarm(
+        self.avail_space_controller = avail_space.AvailSpace()
+        self.alarm_controller = alarm.Alarm(
             self.logger,
             self.config,
-            self.avail_space,
-            self.detectors,
+            self.avail_space_controller,
+            self.detectors_controller,
             self.protected_areas,
             self.sms,
             self.email)
@@ -61,18 +61,18 @@ class App(object):
 
     # Uruchomienie czujek PIR
     def start_detectors(self):
-        self.detectors.watch()
+        self.detectors_controller.watch()
 
     # Uzbrojenie alarmu
     def arming_alarm(self):
-        self.alarm.watch()
+        self.alarm_controller.watch()
 
     # Wykonywanie zdjęć według harmonogramu
     def start_photos_scheduler(self):
         my_photos_scheduler = photos_scheduler.PhotosScheduler(
             self.logger,
             self.config,
-            self.alarm,
+            self.alarm_controller,
             self.protected_areas,
             self.email)
         my_photos_scheduler.start()
