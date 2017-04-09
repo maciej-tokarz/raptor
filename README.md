@@ -1,4 +1,4 @@
-![Raptor](docs/icon.png)
+﻿![Raptor](docs/icon.png)
 # Raptor
 
 ### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
@@ -194,7 +194,7 @@ Auto DNS = yes
 
 $ sudo -i
 
-$ nano raptor.sh
+$ nano /root/raptor.sh
 
 ```
 #!/bin/bash

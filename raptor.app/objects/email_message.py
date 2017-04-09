@@ -40,7 +40,8 @@ class EmailMessage:
 
     def send_email(self, recipients, message):
         try:
-            self.logger.info('EmailMessage: wysyłam e-maila o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
+            start_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailMessage: wysyłam e-maila o {0}'.format(start_time))
             server = smtplib.SMTP()
             server.set_debuglevel(0)
             server.connect(self.config.smtp_host, self.config.smtp_port)
@@ -49,7 +50,8 @@ class EmailMessage:
             server.login(self.config.smtp_user, self.config.smtp_password)
             server.sendmail(self.config.smtp_user, recipients, message)
             server.close()
-            self.logger.info('EmailMessage: e-maila wysłany o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
-        except:
-            self.logger.error('EmailMessage: wysłanie e-maila się nie powiodło :-(')
+            end_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailMessage: e-mail wysłany o {0}'.format(end_time))
+        except Exception as ex:
+            self.logger.error('EmailMessage (send_email):\n{0}'.format(ex))
             pass
