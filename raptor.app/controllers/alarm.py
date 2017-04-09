@@ -7,33 +7,37 @@ from time import strftime
 
 
 class Alarm:
-    def __init__(self, logger, config, avail_space, pir, camera, sms, email):
+    def __init__(self, logger, config, avail_space, detectors, protected_areas, sms, email):
         print('Inicjuję alarm.')
         self.logger = logger
         self.config = config
         self.avail_space = avail_space
-        self.pir = pir
-        self.camera = camera
+        self.detectors = detectors
+        self.protected_areas = protected_areas
         self.sms = sms
         self.email = email
-        self.alarm_started = False
+        self._alarm_is_started = False
         self.alarm_directory = ''
         self.alarm_name = ''
         self.alarm_photos = []
 
-    # Monitoruj wskazania czujki
+    @property
+    def alarm_is_started(self):
+        return self._alarm_is_started
+
+    # Monitoruj wskazania czujek
     def watch(self):
         while True:
             time.sleep(0.5)
-            if self.pir.is_alarm:
-                if not self.alarm_started:
-                    self.logger.info('Alarm: wszczynam alarm! {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
-                    self.alarm()
+            if self.detectors.is_alarm:
+                if not self._alarm_is_started:
+                    self.logger.info('Alarm: wszczynam alarm!')
+                    self.start_alarm()
 
-    def alarm(self):
+    def start_alarm(self):
 
         # Wciągnij flagę alarmu
-        self.alarm_started = True
+        self._alarm_is_started = True
 
         # Sprawdź dostępną przestrzeń karty pamięci
         self.avail_space.check()
@@ -64,7 +68,6 @@ class Alarm:
         self.alarm_directory = '/home/pi/alarms/{0}/'.format(self.alarm_name)
 
     def send_sms(self):
-        print('Alarm: wysyłam sms-a.')
         message = 'Raptor: alarm {0}'.format(self.alarm_name)
         for phone in self.config.recipients_phones:
             self.sms.send(phone, message)
@@ -76,16 +79,17 @@ class Alarm:
 
     def make_alarm_photos(self):
         print('Alarm: wykonuję serię zdjęć z alarmu.')
-        i = 1
-        while i <= 90:
-            print(str(self.pir.status_1))
-            if self.pir.status_1:
-                photo_id = str(i).zfill(3)
-                self.camera.make_photo(self.alarm_directory, photo_id)
-                self.alarm_photos.append(photo_id)
-                print('Alarm: zrobiłem zdjęcie: {0}'.format(photo_id))
-            time.sleep(1)
-            i += 1
+        return
+        # i = 1
+        # while i <= 90:
+        #     print(str(self.pir.status_1))
+        #     if self.pir.status_1:
+        #         photo_id = str(i).zfill(3)
+        #         self.camera.make_photo(self.alarm_directory, photo_id)
+        #         self.alarm_photos.append(photo_id)
+        #         print('Alarm: zrobiłem zdjęcie: {0}'.format(photo_id))
+        #     time.sleep(1)
+        #     i += 1
 
     def send_six_alarm_photos(self):
         print('Alarm: wysyłam pierwsze sześć zdjęć z alarmu.')
@@ -108,6 +112,6 @@ class Alarm:
             photos_to_send)
 
     def remove_alarm_flag(self):
-        self.logger.info('Alarm: zdejmuję flagi alarmu. {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
-        self.pir.is_alarm = False
-        self.alarm_started = False
+        self.logger.info('Alarm: zdejmuję flagi alarmu.')
+        self.detectors.is_alarm = False
+        self._alarm_is_started = False

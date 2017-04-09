@@ -17,5 +17,4 @@ Subject: {1}
 {2}'''.format(self.config.sms_email, self.config.sms_subject, body)
 
         print(message)
-
         self.email.send_email(['sms.do@smsapi.pl'], message)
