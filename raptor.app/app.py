@@ -16,7 +16,7 @@ from objects import config
 from objects import cameras_switcher
 from objects import protected_areas
 from objects import modem
-from objects import email_message
+from objects import email_sender
 from objects import sms
 from objects import os_time
 
@@ -37,7 +37,7 @@ class App(object):
         self.pi_camera.resolution = (1920, 1080)
         self.protected_areas = protected_areas.ProtectedAreas(self.logger, gpio, self.cameras_switcher, self.pi_camera)
         self.modem = modem.Modem(self.logger)
-        self.email = email_message.EmailMessage(self.logger, self.config)
+        self.email = email_sender.Email(self.logger, self.config)
         self.sms = sms.Sms(self.config, self.email)
 
         self.detectors_controller = detectors.Detectors(self.config, self.protected_areas)
@@ -78,16 +78,16 @@ class App(object):
             self.modem.check()
             self.set_os_time()
 
-            Thread(target=self.track_detectors).start()
-            Thread(target=self.arming_alarm).start()
-            Thread(target=self.start_photos_scheduler).start()
-
-            while True:
-                schedule.run_pending()
-                time.sleep(1)
+            # Thread(target=self.track_detectors).start()
+            # Thread(target=self.arming_alarm).start()
+            # Thread(target=self.start_photos_scheduler).start()
+            #
+            # while True:
+            #     schedule.run_pending()
+            #     time.sleep(1)
 
             # Tests
-            # self.sms.send('519585106', 'test')
+            self.sms.send('519585106', 'test')
 
         except Exception as ex:
             self.logger.error('Raptor: {0}'.format(ex))
