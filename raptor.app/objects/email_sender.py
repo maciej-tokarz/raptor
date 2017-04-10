@@ -12,7 +12,7 @@ from email.mime.multipart import MIMEMultipart
 COMMASPACE = ', '
 
 
-class EmailMessage:
+class EmailSender:
     def __init__(self, logger, config):
         print('Inicjuję e-mail.')
         self.logger = logger
@@ -35,12 +35,13 @@ class EmailMessage:
             self.send_email(recipients, multipart.as_string())
 
         except Exception as ex:
-            self.logger.error('EmailMessage (send_photos):\n{0}'.format(ex))
+            self.logger.error('EmailSender (send_photos):\n{0}'.format(ex))
             pass
 
     def send_email(self, recipients, message):
         try:
-            self.logger.info('EmailMessage: wysyłam e-maila o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
+            start_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailSender: wysyłam e-maila o {0}'.format(start_time))
             server = smtplib.SMTP()
             server.set_debuglevel(0)
             server.connect(self.config.smtp_host, self.config.smtp_port)
@@ -49,7 +50,8 @@ class EmailMessage:
             server.login(self.config.smtp_user, self.config.smtp_password)
             server.sendmail(self.config.smtp_user, recipients, message)
             server.close()
-            self.logger.info('EmailMessage: e-maila wysłany o {0}'.format(strftime('%Y-%m-%d %H%M', time.localtime())))
-        except:
-            self.logger.error('EmailMessage: wysłanie e-maila się nie powiodło :-(')
+            end_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailSender: e-mail wysłany o {0}'.format(end_time))
+        except Exception as ex:
+            self.logger.error('EmailSender (send_email):\n{0}'.format(ex))
             pass

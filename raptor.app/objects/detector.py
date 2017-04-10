@@ -3,12 +3,11 @@
 
 
 class Detector(object):
-    def __init__(self, gpio_id, gpio):
-        self._gpio_id = gpio_id
-        self._gpio = gpio
-        # gpio.setup(gpio_id, gpio.IN)
+    def __init__(self, gpio, detector_pin):
+        self.gpio = gpio
+        self.detector_pin = detector_pin
+        gpio.setup(detector_pin, gpio.IN)
 
     @property
     def status(self):
-        return True
-        # return self._gpio.input(self._gpio_id)
+        return self.gpio.input(self.detector_pin)

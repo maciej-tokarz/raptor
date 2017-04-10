@@ -1,4 +1,4 @@
-![Raptor](docs/icon.png)
+﻿![Raptor](docs/icon.png)
 # Raptor
 
 ### Udostępniony kod wykorzystujesz na własną odpowiedzialność!
@@ -17,6 +17,7 @@ Zainteresowanych zapraszam do współtworzenia Raptora.
 
 ## Podstawowe funkcje programu
 
+- Monitorowanie kilku zdefiniowanych obszarów,
 - Raptor na starcie ustawia czas systemowy na podstawie wzorca wg. pool.ntp.org,
 - dozoruje obszar czujką i śledzi jej wskazania,
 - po otrzymaniu określonej ilości wskazań pozytywnych czujki aktywuje alarm,
@@ -193,7 +194,7 @@ Auto DNS = yes
 
 $ sudo -i
 
-$ nano raptor.sh
+$ nano /root/raptor.sh
 
 ```
 #!/bin/bash

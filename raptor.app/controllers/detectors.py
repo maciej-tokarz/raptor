@@ -1,57 +1,58 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import RPi.GPIO as GPIO
 import time
-
-from objects import detector
 
 
 class Detectors(object):
-    def __init__(self, config):
+    def __init__(self, config, protected_areas):
+        print('Inicjuję czujki.')
         self.config = config
-        print('Inicjuję czujkę.')
-        self.PIR_1 = 26
-        # self.PIR_2 = 27
-        # self.PIR_3 = 28
-        # self.PIR_4 = 29
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.PIR_1, GPIO.IN)
-        # GPIO.setup(self.PIR_2, GPIO.IN)
-        # GPIO.setup(self.PIR_3, GPIO.IN)
-        # GPIO.setup(self.PIR_4, GPIO.IN)
-        self.status_1 = False
-        # self.status_2 = False
-        # self.status_3 = False
-        # self.status_4 = False
-        self.is_alarm = False
+        self.protected_areas = protected_areas
+        self.detector_status_a = False
+        self.detector_status_b = False
+        self.detector_status_c = False
+        self.detector_status_d = False
+        self._is_alarm = False
 
-    def watch(self):
+    @property
+    def is_alarm(self):
+        return self._is_alarm
+
+    @is_alarm.setter
+    def is_alarm(self, value):
+        self._is_alarm = value
+
+    def track_detectors(self):
         i = 0
         while True:
             time.sleep(0.5)
 
-            # Odczytaj wskazanie czujki
-            self.status_1 = GPIO.input(self.PIR_1)
-            # self.status_2 = GPIO.input(self.PIR_2)
-            # self.status_3 = GPIO.input(self.PIR_3)
-            # self.status_4 = GPIO.input(self.PIR_4)
+            # Odczytaj wskazanie czujek
+            self.detector_status_a = self.protected_areas.area_a.detector_status
+            self.detector_status_b = self.protected_areas.area_b.detector_status
+            self.detector_status_c = self.protected_areas.area_c.detector_status
+            self.detector_status_d = self.protected_areas.area_d.detector_status
 
-            print('Pir 1 status: {0}'.format(self.status_1))
-            # print('Pir 2 status: {0}'.format(self.status_2))
-            # print('Pir 3 status: {0}'.format(self.status_3))
-            # print('Pir 4 status: {0}'.format(self.status_4))
+            # print('Detector A: {0}'.format(self.detector_status_a))
+            # print('Detector B: {0}'.format(self.detector_status_b))
+            # print('Detector C: {0}'.format(self.detector_status_c))
+            # print('Detector D: {0}'.format(self.detector_status_d))
 
             # Jeśli czujka wykryła ruch
-            # if self.status_1 or self.status_2 or self.status_3 or self.status_4 and not self.is_alarm:
-            if self.status_1 and not self.is_alarm:
+            if self.detector_status_a or \
+                    self.detector_status_b or \
+                    self.detector_status_c or \
+                    self.detector_status_d and not \
+                    self.is_alarm:
+
                 i += 1
                 print('Licznik ruchu: {0}'.format(i))
-                # Jeśli wskazań czujki o ruchu jest więcej niż poniższy limit wszcznij alarm
+                # Jeśli wskazań czujki jest więcej niż poniższy limit wszcznij alarm
                 if i > 15:
                     print('Wszczynam alarm!')
                     # Wciągnij flagę alarmu
-                    self.is_alarm = True
+                    self._is_alarm = True
                     i = 0
             else:
                 if i > 0:
