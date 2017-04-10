@@ -9,6 +9,10 @@ class Camera(object):
         self.pi_camera = pi_camera
 
     def capture(self, path, file_name):
-        self.cameras_switcher.set_camera(self.area_no)
-        self.pi_camera.exif_tags['IFD0.Copyright'] = 'Raptor kamera {0}'.format(self.area_no)
-        self.pi_camera.capture('{0}{1}.jpg'.format(path, file_name))
+        try:
+            self.cameras_switcher.set_camera(self.area_no)
+            self.pi_camera.exif_tags['IFD0.Copyright'] = 'Raptor kamera {0}'.format(self.area_no)
+            self.pi_camera.capture('{0}{1}.jpg'.format(path, file_name))
+        except Exception as ex:
+            self.logger.error('Camera (capture):\n{0}'.format(ex))
+            pass

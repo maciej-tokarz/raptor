@@ -67,11 +67,6 @@ class Alarm:
         self.alarm_name = strftime('%Y-%m-%d %H%M', time.localtime())
         self.alarm_directory = '/home/pi/alarms/{0}/'.format(self.alarm_name)
 
-    def send_sms(self):
-        message = 'Raptor: alarm {0}'.format(self.alarm_name)
-        for phone in self.config.recipients_phones:
-            self.sms.send(phone, message)
-
     def prepare_alarm_directory(self):
         # Przykładowa lokalizacja: /home/pi/alarms/2016-03-20 1255/
         if not os.path.exists(self.alarm_directory):
@@ -80,7 +75,7 @@ class Alarm:
     def make_alarm_photos(self):
         print('Alarm: wykonuję serię zdjęć z alarmu.')
         i = 1
-        while i <= 90:
+        while i <= 60:
             photo_id = str(i).zfill(3)
             if self.config.area_a:
                 file_name_a = '{0}_a'.format(photo_id)
@@ -100,6 +95,11 @@ class Alarm:
                 self.alarm_photos.append(file_name_d)
             time.sleep(1)
             i += 1
+
+    def send_sms(self):
+        message = 'Raptor: alarm {0}'.format(self.alarm_name)
+        for phone in self.config.recipients_phones:
+            self.sms.send(phone, message)
 
     def send_six_alarm_photos(self):
         print('Alarm: wysyłam pierwsze sześć zdjęć z alarmu.')
