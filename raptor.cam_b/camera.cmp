@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by PcbNew   date = 31.03.2017 10:59:36
+Cmp-Mod V01 Created by PcbNew   date = 13.04.2017 22:03:50
 
 BeginCmp
 TimeStamp = 58DDFC2E
@@ -41,19 +41,19 @@ IdModule  = rpi:2.20mmDrill;
 EndCmp
 
 BeginCmp
-TimeStamp = 58DDFC42
-Path = /58DE03D8
-Reference = [NoRef];
-ValeurCmp = [NoVal];
-IdModule  = objects:flat_cable_connector_16pin;
-EndCmp
-
-BeginCmp
 TimeStamp = 58DDFC16
 Path = /58DDF909
 Reference = [NoRef];
 ValeurCmp = [NoVal];
 IdModule  = objects:FFC_connector_15x1.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 58DDFC42
+Path = /58DE03D8
+Reference = [NoRef];
+ValeurCmp = [NoVal];
+IdModule  = Connectors_Multicomp:Multicomp_MC9A12-1634_2x08x2.54mm_Straight;
 EndCmp
 
 EndListe

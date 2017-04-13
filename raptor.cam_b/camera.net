@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source D:/Projekty/Raptor/raptor.cam/camera.sch)
-    (date "13.04.2017 21:28:39")
+    (source D:/Projekty/Raptor/raptor.cam_b/camera.sch)
+    (date "13.04.2017 22:02:50")
     (tool "Eeschema 4.0.5")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -29,7 +29,7 @@
       (tstamp 58DDF909))
     (comp (ref P3)
       (value CONN_01X16)
-      (footprint Connectors_Multicomp:Multicomp_MC9A12-1634_2x08x2.54mm_Straight)
+      (footprint objects:Przejscie_tasma_druk_2x08x2.54mm)
       (libsource (lib camera-cache) (part CONN_01X16))
       (sheetpath (names /) (tstamps /))
       (tstamp 58DE03D8)))
@@ -102,7 +102,7 @@
         (pin (num 16) (name P16) (type passive)))))
   (libraries
     (library (logical camera-cache)
-      (uri D:\Projekty\Raptor\raptor.cam\camera-cache.lib)))
+      (uri D:\Projekty\Raptor\raptor.cam_b\camera-cache.lib)))
   (nets
     (net (code 1) (name "Net-(P1-Pad7)")
       (node (ref P1) (pin 7))

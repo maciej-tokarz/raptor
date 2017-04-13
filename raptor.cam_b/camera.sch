@@ -71,7 +71,7 @@ U 1 1 58DE03D8
 P 6000 2700
 F 0 "P3" V 5200 2900 50  0000 C CNN
 F 1 "CONN_01X16" H 6000 3000 50  0000 C CNN
-F 2 "Connectors_Multicomp:Multicomp_MC9A12-1634_2x08x2.54mm_Straight" V 6000 2900 50  0000 C CNN
+F 2 "objects:Przejscie_tasma_druk_2x08x2.54mm" V 6000 2900 50  0000 C CNN
 F 3 "" V 6000 2900 50  0000 C CNN
 	1    6000 2700
 	1    0    0    -1  
