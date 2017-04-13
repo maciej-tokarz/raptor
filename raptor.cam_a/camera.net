@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source D:/Projekty/Raptor/raptor.cam/camera.sch)
-    (date "31.03.2017 10:45:43")
+    (date "13.04.2017 21:28:39")
     (tool "Eeschema 4.0.5")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -29,7 +29,7 @@
       (tstamp 58DDF909))
     (comp (ref P3)
       (value CONN_01X16)
-      (footprint objects:flat_cable_connector_16pin)
+      (footprint Connectors_Multicomp:Multicomp_MC9A12-1634_2x08x2.54mm_Straight)
       (libsource (lib camera-cache) (part CONN_01X16))
       (sheetpath (names /) (tstamps /))
       (tstamp 58DE03D8)))

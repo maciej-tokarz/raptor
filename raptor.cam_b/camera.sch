@@ -49,7 +49,7 @@ U 1 1 58DDF822
 P 7300 3200
 F 0 "P2" H 7300 3500 50  0000 C CNN
 F 1 "CONN_01X05" V 7400 3200 50  0000 C CNN
-F 2 "objects:flat_cable_connector_5pin" H 7300 3200 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05_Pitch2.54mm" H 7300 3200 50  0000 C CNN
 F 3 "" H 7300 3200 50  0000 C CNN
 	1    7300 3200
 	1    0    0    -1  
@@ -71,7 +71,7 @@ U 1 1 58DE03D8
 P 6000 2700
 F 0 "P3" V 5200 2900 50  0000 C CNN
 F 1 "CONN_01X16" H 6000 3000 50  0000 C CNN
-F 2 "objects:flat_cable_connector_16pin" V 6000 2900 50  0000 C CNN
+F 2 "Connectors_Multicomp:Multicomp_MC9A12-1634_2x08x2.54mm_Straight" V 6000 2900 50  0000 C CNN
 F 3 "" V 6000 2900 50  0000 C CNN
 	1    6000 2700
 	1    0    0    -1  
