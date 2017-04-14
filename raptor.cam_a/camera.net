@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source D:/Projekty/Raptor/raptor.cam/camera.sch)
-    (date "31.03.2017 10:45:43")
+    (source D:/Projekty/Raptor/raptor.cam_a/camera.sch)
+    (date "13.04.2017 21:36:36")
     (tool "Eeschema 4.0.5")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -102,7 +102,7 @@
         (pin (num 16) (name P16) (type passive)))))
   (libraries
     (library (logical camera-cache)
-      (uri D:\Projekty\Raptor\raptor.cam\camera-cache.lib)))
+      (uri D:\Projekty\Raptor\raptor.cam_a\camera-cache.lib)))
   (nets
     (net (code 1) (name "Net-(P1-Pad7)")
       (node (ref P1) (pin 7))
