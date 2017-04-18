@@ -48,7 +48,7 @@ Dzięki pomocy Piotra "pimowo" z forum [nettemp.pl](http://nettemp.pl/forum/view
 - 2 lub 3 ogniwa 18650 wraz z koszykiem
 - zasilacz sieciowy 5V minimum 3A 
 - ładowarka ogniw 18650 np. TP4056
-- przetwornica STEP-UP np. SX1308 
+- przetwornica DC/DC MT3608 step-up 5-28V 2A 
 - dwie diody np. 1N5822
 
 Piotr - serdeczne dzięki!

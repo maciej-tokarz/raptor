@@ -76,11 +76,11 @@ Wykaz podzespołów:
 * Koszyki na ogniwa 18650 2 szt.: 5 PLN
 * Zasilacz GLP GPV-20-5 (5 V 3 A): 30 PLN
 * Ładowarka ogniw 18650 np. TP4056 z zabezpieczeniem przed nadmiernym rozładowaniem: 7 PLN
-* Przetwornica STEP-UP np. SX1308: 8 PLN
+* Przetwornica DC/DC MT3608 step-up 5-28V 2A: 3 PLN
 * Diody np. 1N5822 2 szt.: 3 PLN
 * Terminal block 2pin 3 szt.: 2 PLN
 
-RAZEM: 115 PLN
+RAZEM: 110 PLN
 
 ___
 Maciej Tokarz © My-Poi!
