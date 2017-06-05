@@ -1,7 +1,3 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP CAMERA_CONN_01X15
-D CAMERA
-$ENDCMP
-#
 #End Doc Library
