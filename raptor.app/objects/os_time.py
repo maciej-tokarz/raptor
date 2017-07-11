@@ -8,7 +8,7 @@ from time import ctime
 
 class OsTime:
     def __init__(self, logger):
-        print('Inicjuję OsTime.')
+        print('Start OsTime.')
         self.logger = logger
 
     def set(self):

@@ -6,6 +6,7 @@ from objects import protected_area as area
 
 class ProtectedAreas(object):
     def __init__(self, logger, gpio, cameras_switcher, pi_camera):
+        print('Start ProtectedAreas')
         self._area_a = area.ProtectedArea(logger, 'A', gpio, 31, cameras_switcher, pi_camera)
         self._area_b = area.ProtectedArea(logger, 'B', gpio, 33, cameras_switcher, pi_camera)
         self._area_c = area.ProtectedArea(logger, 'C', gpio, 35, cameras_switcher, pi_camera)

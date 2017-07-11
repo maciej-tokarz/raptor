@@ -6,7 +6,7 @@ import ConfigParser
 
 class Config(object):
     def __init__(self):
-        print('Inicjuję config.')
+        print('Start Config')
         self.config = ConfigParser.ConfigParser()
         self._area_a = False
         self._area_b = False

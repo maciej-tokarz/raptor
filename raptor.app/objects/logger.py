@@ -6,6 +6,7 @@ import logging
 
 class Logger:
     def __init__(self):
+        print('Start Logger.')
         logging.basicConfig(
             level=logging.DEBUG,
             format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',

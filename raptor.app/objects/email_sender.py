@@ -14,7 +14,7 @@ COMMASPACE = ', '
 
 class EmailSender:
     def __init__(self, logger, config):
-        print('Inicjuję e-mail.')
+        print('Start EmailSender.')
         self.logger = logger
         self.config = config
 

@@ -4,6 +4,7 @@
 
 class Camera(object):
     def __init__(self, area_no, cameras_switcher, pi_camera):
+        print('Start Camera {0}'.format(area_no))
         self.area_no = area_no
         self.cameras_switcher = cameras_switcher
         self.pi_camera = pi_camera

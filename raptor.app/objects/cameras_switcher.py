@@ -4,6 +4,7 @@
 
 class CamerasSwitcher(object):
     def __init__(self, gpio):
+        print('Start CamerasSwitcher')
         self._gpio = gpio
         gpio.setup(7, gpio.OUT)
         gpio.setup(11, gpio.OUT)

@@ -7,6 +7,7 @@ from objects import detector
 
 class ProtectedArea(object):
     def __init__(self, logger, area_no, gpio, detector_pin, cameras_switcher, pi_camera):
+        print('Start ProtectedArea {0}'.format(area_no))
         self.logger = logger
         self.area_no = area_no
         self.detector = detector.Detector(gpio, detector_pin)
@@ -16,6 +17,7 @@ class ProtectedArea(object):
         try:
             if self.detector.status:
                 self.camera.capture(path, file_name)
+                return True
         except Exception as ex:
             self.logger.error('ProtectedArea {0} (make_photo): {1}'.format(self.area_no, ex))
             pass

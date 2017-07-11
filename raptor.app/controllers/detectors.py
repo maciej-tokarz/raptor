@@ -6,7 +6,7 @@ import time
 
 class Detectors(object):
     def __init__(self, config, protected_areas):
-        print('Inicjuję czujki.')
+        print('Start Detectors.')
         self.config = config
         self.protected_areas = protected_areas
         self.detector_status_a = False
@@ -34,8 +34,8 @@ class Detectors(object):
             self.detector_status_c = self.protected_areas.area_c.detector_status
             self.detector_status_d = self.protected_areas.area_d.detector_status
 
-            # print('Detector A: {0}'.format(self.detector_status_a))
-            # print('Detector B: {0}'.format(self.detector_status_b))
+            print('Detector A: {0}'.format(self.detector_status_a))
+            print('Detector B: {0}'.format(self.detector_status_b))
             # print('Detector C: {0}'.format(self.detector_status_c))
             # print('Detector D: {0}'.format(self.detector_status_d))
 
