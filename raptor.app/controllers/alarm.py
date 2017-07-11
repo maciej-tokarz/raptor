@@ -79,7 +79,6 @@ class Alarm:
             photo_id = str(i).zfill(3)
             if self.config.area_a:
                 file_name_a = '{0}_a'.format(photo_id)
-<<<<<<< HEAD
                 make_photo = self.protected_areas.area_a.make_photo(self.alarm_directory, file_name_a)
                 if make_photo:
                     self.alarm_photos.append(file_name_a)
@@ -98,22 +97,6 @@ class Alarm:
                 make_photo = self.protected_areas.area_d.make_photo(self.alarm_directory, file_name_d)
                 if make_photo:
                     self.alarm_photos.append(file_name_d)
-=======
-                self.protected_areas.area_a.make_photo(self.alarm_directory, file_name_a)
-                self.alarm_photos.append(file_name_a)
-            if self.config.area_b:
-                file_name_b = '{0}_b'.format(photo_id)
-                self.protected_areas.area_b.make_photo(self.alarm_directory, file_name_b)
-                self.alarm_photos.append(file_name_b)
-            if self.config.area_c:
-                file_name_c = '{0}_c'.format(photo_id)
-                self.protected_areas.area_c.make_photo(self.alarm_directory, file_name_c)
-                self.alarm_photos.append(file_name_c)
-            if self.config.area_d:
-                file_name_d = '{0}_d'.format(photo_id)
-                self.protected_areas.area_d.make_photo(self.alarm_directory, file_name_d)
-                self.alarm_photos.append(file_name_d)
->>>>>>> 6483f5236b44cc4e093d37284cbaac14a0ccb074
             time.sleep(1)
             i += 1
 
