@@ -7,13 +7,13 @@ from time import strftime
 
 
 class Alarm:
-    def __init__(self, logger, config, avail_space_controller, detectors_controller, protected_areas_controller, sms, email):
+    def __init__(self, logger, config, avail_space_controller, detectors_controller, protected_areas, sms, email):
         print('Inicjuję alarm.')
         self.logger = logger
         self.config = config
         self.avail_space_controller = avail_space_controller
         self.detectors_controller = detectors_controller
-        self.protected_areas_controller = protected_areas_controller
+        self.protected_areas = protected_areas
         self.sms = sms
         self.email = email
         self._alarm_is_started = False
@@ -79,19 +79,19 @@ class Alarm:
             photo_id = str(i).zfill(3)
             if self.config.area_a:
                 file_name_a = '{0}_a'.format(photo_id)
-                self.protected_areas_controller.area_a.make_photo(self.alarm_directory, file_name_a)
+                self.protected_areas.area_a.make_photo(self.alarm_directory, file_name_a)
                 self.alarm_photos.append(file_name_a)
             if self.config.area_b:
                 file_name_b = '{0}_b'.format(photo_id)
-                self.protected_areas_controller.area_b.make_photo(self.alarm_directory, file_name_b)
+                self.protected_areas.area_b.make_photo(self.alarm_directory, file_name_b)
                 self.alarm_photos.append(file_name_b)
             if self.config.area_c:
                 file_name_c = '{0}_c'.format(photo_id)
-                self.protected_areas_controller.area_c.make_photo(self.alarm_directory, file_name_c)
+                self.protected_areas.area_c.make_photo(self.alarm_directory, file_name_c)
                 self.alarm_photos.append(file_name_c)
             if self.config.area_d:
                 file_name_d = '{0}_d'.format(photo_id)
-                self.protected_areas_controller.area_d.make_photo(self.alarm_directory, file_name_d)
+                self.protected_areas.area_d.make_photo(self.alarm_directory, file_name_d)
                 self.alarm_photos.append(file_name_d)
             time.sleep(1)
             i += 1
