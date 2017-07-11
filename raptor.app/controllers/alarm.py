@@ -7,13 +7,13 @@ from time import strftime
 
 
 class Alarm:
-    def __init__(self, logger, config, avail_space_controller, detectors_controller, protected_areas, sms, email):
+    def __init__(self, logger, config, avail_space_controller, detectors_controller, protected_areas_controller, sms, email):
         print('Inicjuję alarm.')
         self.logger = logger
         self.config = config
         self.avail_space_controller = avail_space_controller
         self.detectors_controller = detectors_controller
-        self.protected_areas = protected_areas
+        self.protected_areas_controller = protected_areas_controller
         self.sms = sms
         self.email = email
         self._alarm_is_started = False
