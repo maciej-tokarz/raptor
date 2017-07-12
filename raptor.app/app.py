@@ -87,7 +87,7 @@ class App(object):
                 time.sleep(1)
 
             # Tests
-            # self.sms.send('519585106', 'test')
+            # self.sms.send('111222333', 'test')
 
         except Exception as ex:
             self.logger.error('Raptor: {0}'.format(ex))
