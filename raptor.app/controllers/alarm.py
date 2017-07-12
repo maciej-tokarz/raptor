@@ -58,7 +58,7 @@ class Alarm:
         self.email.open_connection()
 
         # Wyślij pierwszych sześć zdjęć z alarmu
-        self.send_six_alarm_photos()
+        self.send_alarm_photos()
 
         # Wyślij sms-a z informację o alarmie
         self.send_sms()
@@ -106,13 +106,13 @@ class Alarm:
             time.sleep(1)
             i += 1
 
-    def send_six_alarm_photos(self):
-        self.logger.info('Alarm: wysylam pierwsze szesc zdjec z alarmu.')
+    def send_alarm_photos(self):
+        self.logger.info('Alarm: wysylam pierwsze cztery zdjecia z alarmu.')
         counter = 0
         alarm_photos_len = len(self.alarm_photos)
         photos_to_send = []
 
-        for i in range(0, 6, 1):
+        for i in range(0, 4, 1):
             counter += 1
             if counter > alarm_photos_len:
                 break
@@ -121,8 +121,8 @@ class Alarm:
 
         self.email.send_photos(
             self.config.recipients_emails,
-            'Raptor: pierwsze szesc zdjec z alarmu {0}'.format(self.alarm_name),
-            'W zalaczeniu pierwsze szesc zdjec (sposrod wykonanych {0}) z alarmu {1}'.format(
+            'Raptor: pierwsze cztery zdjecia z alarmu {0}'.format(self.alarm_name),
+            'W zalaczeniu pierwsze cztery zdjecia (sposrod wykonanych {0}) z alarmu {1}'.format(
                 alarm_photos_len,
                 self.alarm_name),
             photos_to_send)
