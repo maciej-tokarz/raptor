@@ -18,7 +18,7 @@ class OsTime:
             current_time = ctime(response.tx_time)
             # current_time = 'Sun Apr 09 21:15:06 2017'
             os.system("sudo date -s '{0}'".format(current_time))
-            self.logger.info('Raptor rozpoczął pracę: {0}'.format(current_time))
+            self.logger.info('Raptor rozpoczal prace: {0}'.format(current_time))
 
         except Exception as ex:
             self.logger.error('OsTime: {0}'.format(ex))

@@ -41,7 +41,7 @@ class App(object):
         self.sms = sms.Sms(self.config, self.email)
 
         self.detectors_controller = detectors.Detectors(self.config, self.protected_areas)
-        self.avail_space_controller = avail_space.AvailSpace()
+        self.avail_space_controller = avail_space.AvailSpace(self.logger)
         self.alarm_controller = alarm.Alarm(
             self.logger,
             self.config,
@@ -91,6 +91,7 @@ class App(object):
 
         except Exception as ex:
             self.logger.error('Raptor: {0}'.format(ex))
+            pass
 
 app = App()
 app.start()

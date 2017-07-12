@@ -54,11 +54,17 @@ class Alarm:
         # Wykonaj serię zdjęć z alarmu
         self.make_alarm_photos()
 
-        # Wyślij sms-a z informację o alarmie
-        self.send_sms()
+        # Otwórz połączenie z serwerem poczty
+        self.email.open_connection()
 
         # Wyślij pierwszych sześć zdjęć z alarmu
         self.send_six_alarm_photos()
+
+        # Wyślij sms-a z informację o alarmie
+        self.send_sms()
+
+        # Zamknij połączenie z serwerem poczty
+        self.email.close_connection()
 
         # Zdejmij flagę alarmu!
         self.remove_alarm_flag()
@@ -73,7 +79,7 @@ class Alarm:
             os.makedirs(self.alarm_directory)
 
     def make_alarm_photos(self):
-        print('Alarm: wykonuję serię zdjęć z alarmu.')
+        self.logger.info('Alarm: wykonuje serie zdjec z alarmu.')
         i = 1
         while i <= 60:
             photo_id = str(i).zfill(3)
@@ -100,13 +106,8 @@ class Alarm:
             time.sleep(1)
             i += 1
 
-    def send_sms(self):
-        message = 'Raptor: alarm {0}'.format(self.alarm_name)
-        for phone in self.config.recipients_phones:
-            self.sms.send(phone, message)
-
     def send_six_alarm_photos(self):
-        print('Alarm: wysyłam pierwsze sześć zdjęć z alarmu.')
+        self.logger.info('Alarm: wysylam pierwsze szesc zdjec z alarmu.')
         counter = 0
         alarm_photos_len = len(self.alarm_photos)
         photos_to_send = []
@@ -126,7 +127,13 @@ class Alarm:
                 self.alarm_name),
             photos_to_send)
 
+    def send_sms(self):
+        self.logger.info('Alarm: wysylam sms-y.')
+        message = 'Raptor: alarm {0}'.format(self.alarm_name)
+        for phone in self.config.recipients_phones:
+            self.sms.send(phone, message)
+
     def remove_alarm_flag(self):
-        self.logger.info('Alarm: zdejmuję flagi alarmu.')
+        self.logger.info('Alarm: zdejmuje flagi alarmu.')
         self.detectors_controller.is_alarm = False
         self._alarm_is_started = False

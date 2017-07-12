@@ -8,13 +8,13 @@ import time
 class Modem:
     def __init__(self, logger):
         print('Start Modem')
-        # self.logger = logger
-        # self.modem = serial.Serial('/dev/ttyUSB0', 115200, timeout=5)
-        # time.sleep(1)
+        self.logger = logger
+        self.modem = serial.Serial('/dev/ttyUSB0', 19200, timeout=1)
+        time.sleep(1)
 
     def check(self):
         if not self.modem.isOpen():
-            self.logger.error('Modem: Brak połączenia z Internetem!')
+            self.logger.error('Modem: Brak polaczenia z Internetem!')
         else:
             print('Sprawdzenie modemu OK!')
 

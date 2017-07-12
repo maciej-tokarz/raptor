@@ -17,6 +17,29 @@ class EmailSender:
         print('Start EmailSender.')
         self.logger = logger
         self.config = config
+        self.server = smtplib.SMTP()
+
+    def open_connection(self):
+        try:
+            start_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailSender: otwieram polaczenie z serwerem poczty o {0}'.format(start_time))
+            self.server.set_debuglevel(0)
+            self.server.connect(self.config.smtp_host, self.config.smtp_port)
+            self.server.ehlo()
+            self.server.starttls()
+            self.server.login(self.config.smtp_user, self.config.smtp_password)
+        except Exception as ex:
+            self.logger.error('EmailSender (open_connection):\n{0}'.format(ex))
+            pass
+
+    def close_connection(self):
+        try:
+            self.server.quit()
+            end_time = strftime('%Y-%m-%d %H%M', time.localtime())
+            self.logger.info('EmailSender: zamykam polaczenie z serwerem poczty o {0}'.format(end_time))
+        except Exception as ex:
+            self.logger.error('EmailSender (close_connection):\n{0}'.format(ex))
+            pass
 
     def send_photos(self, recipients=[], subject='', message='', image_paths=[]):
         try:
@@ -40,18 +63,8 @@ class EmailSender:
 
     def send_email(self, recipients, message):
         try:
-            start_time = strftime('%Y-%m-%d %H%M', time.localtime())
-            self.logger.info('EmailSender: wysyłam e-maila o {0}'.format(start_time))
-            server = smtplib.SMTP()
-            server.set_debuglevel(0)
-            server.connect(self.config.smtp_host, self.config.smtp_port)
-            server.ehlo()
-            server.starttls()
-            server.login(self.config.smtp_user, self.config.smtp_password)
-            server.sendmail(self.config.smtp_user, recipients, message)
-            server.close()
-            end_time = strftime('%Y-%m-%d %H%M', time.localtime())
-            self.logger.info('EmailSender: e-mail wysłany o {0}'.format(end_time))
+            self.server.sendmail(self.config.smtp_user, recipients, message)
+            time.sleep(1)
         except Exception as ex:
             self.logger.error('EmailSender (send_email):\n{0}'.format(ex))
             pass

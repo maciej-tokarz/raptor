@@ -34,8 +34,8 @@ class Detectors(object):
             self.detector_status_c = self.protected_areas.area_c.detector_status
             self.detector_status_d = self.protected_areas.area_d.detector_status
 
-            print('Detector A: {0}'.format(self.detector_status_a))
-            print('Detector B: {0}'.format(self.detector_status_b))
+            # print('Detector A: {0}'.format(self.detector_status_a))
+            # print('Detector B: {0}'.format(self.detector_status_b))
             # print('Detector C: {0}'.format(self.detector_status_c))
             # print('Detector D: {0}'.format(self.detector_status_d))
 
@@ -47,7 +47,7 @@ class Detectors(object):
                     self.is_alarm:
 
                 i += 1
-                print('Licznik ruchu: {0}'.format(i))
+                # print('Licznik ruchu: {0}'.format(i))
                 # Jeśli wskazań czujki jest więcej niż poniższy limit wszcznij alarm
                 if i > 15:
                     print('Wszczynam alarm!')
@@ -58,4 +58,4 @@ class Detectors(object):
                 if i > 0:
                     # Jeśli czujka nie wykrywa ruchu wycofuj poziom zagrożenia
                     i -= 1
-                    print('Licznik ruchu: {0}'.format(i))
+                    # print('Licznik ruchu: {0}'.format(i))
