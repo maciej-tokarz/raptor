@@ -11,7 +11,7 @@ class ProtectedArea(object):
         self.logger = logger
         self.area_no = area_no
         self.detector = detector.Detector(gpio, detector_pin)
-        self.camera = camera.Camera(area_no, cameras_switcher, pi_camera)
+        self.camera = camera.Camera(logger, area_no, cameras_switcher, pi_camera)
 
     def make_photo(self, path, file_name):
         try:
